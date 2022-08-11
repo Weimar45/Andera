@@ -1,0 +1,126 @@
+---
+title: "**Tutoriales de Phyloseq**"
+subtitle: "**Análisis de secuencias de 16S con DADA2**"
+author: "**Alejandro Navas González**"
+date: '**Fecha: `r format(Sys.Date(),"%e de %B, %Y")`**'
+output:
+  html_document:
+    anchor_sections: false
+    number_sections: no
+    theme: spacelab
+    highlight: zenburn
+    toc: yes
+    toc_depth: 6
+    toc_float: yes
+    # number_sections: true
+    # code_folding: hide
+  pdf_document:
+    df_print: paged
+    toc: yes
+    toc_depth: 6
+    highlight: breezedark
+documentclass: book
+geometry: margin = 2cm
+# geometry: "left=3cm,right=3cm,top=2cm,bottom=2cm"
+latex_engine: xelatex
+---
+
+```{r setup, include = FALSE}
+  
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, 
+                      comment = NA, prompt = FALSE, tidy = FALSE, 
+                      fig.width = 10, fig.height = 12, fig_caption = TRUE)
+
+```
+
+<style>
+#TOC {
+
+  color: #D75B1D;
+  background-color: #F5F5F5;
+
+}
+#header {
+  
+  text-align: center;
+  color: #D75B1D;
+  background-color: #F5F5F5;
+  opacity: 0.8;
+  font-family: Calibri;
+  
+}
+h1, h2, h3, h4 {
+  
+  color: #D75B1D;
+  opacity: 0.8;
+
+}
+body {
+
+    font-family: Calibri;
+    text-align:justify;
+    background-color: #F5F5F5;
+    
+}
+pre {
+
+    font-family: Serif;
+    
+}
+</style>
+
+# **Configuración de la Sesións** 
+
+En primer lugar se definen los paquetes a utilizar en el tutorial, que proceden de CRAN, BioConductor, GitHub y Git. 
+
+```{r}
+
+## Repositorio CRAN
+cran_packages <- c("bookdown", "knitr", "tidyverse", "plyr", "grid", "gridExtra", "kableExtra", "xtable", "ggpubr")
+
+## Repositorio Bioconductor
+bioc_packages <- c("phyloseq", "dada2", "DECIPHER", "phangorn", "ggpubr", "BiocManager","DESeq2", "microbiome", "philr")
+
+## Repositorio GitHub
+git_source <- c("twbattaglia/btools", "gmteunisse/Fantaxtic", "MadsAlbertsen/ampvis2", "opisthokonta/tsnemicrobiota")
+
+# fuente/nombre del paquete
+git_packages <- c("btools", "fantaxtic", "ampvis2", "tsnemicrobiota")
+
+```
+
+Se instalan estos paquetes. 
+
+```{r eval=FALSE}
+# Instalar paquetes CRAN
+.inst <- cran_packages %in% installed.packages()
+if(any(!.inst)) {
+  install.packages(cran_packages[!.inst])
+}
+
+# Intalar paquetes BioConductor
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+.inst <- bioc_packages %in% installed.packages()
+
+
+if(any(!.inst)) {
+  BiocManager::install(bioc_packages[!.inst])
+}
+
+# Instalar paquetes GitHub
+.inst <- git_source %in% installed.packages()
+if(any(!.inst)) {
+  devtools::install_github(git_source[!.inst])
+}
+
+```
+
+
+Se cargan los paquetes instalados. 
+
+```{r}
+
+```
+
+
