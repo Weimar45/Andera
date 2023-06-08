@@ -8,7 +8,7 @@ data(package = 'phyloseq')
 data("GlobalPatterns")
 GlobalPatterns
 
-# Identificador de las muestras.
+# Identificador de las muestras. 
 sample_names(GlobalPatterns) 
 
 # Número de muestras en el objeto phyloseq. 
