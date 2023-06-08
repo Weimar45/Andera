@@ -22,5 +22,12 @@ data("GlobalPatterns")
 # Esto ayudaría a eliminar las OTUs que son raras o que podrían ser artefactos
 # de secuenciación.
 
-Es importante tener en cuenta que el filtrado de OTUs es una decisión que debe basarse en el conocimiento del conjunto de datos y del objetivo del análisis. Es posible que desees experimentar con diferentes valores de X y ver cómo afectan a tus resultados.
-Otus97phyl.F1 <- filter_taxa(Otus97phyl, function(x) sum(x) > 100, TRUE)
+# Es importante tener en cuenta que el filtrado de OTUs es una decisión que debe
+# basarse en el conocimiento del conjunto de datos y del objetivo del análisis. 
+# Es posible experimentar con diferentes valores de X para ver cómo
+# afectan a tus resultados.
+
+# En este caso tenemos 26 muestras, como vimos en el script anterior, por lo que
+# podríamos establecer unas 5 muestras como umbral.
+
+gp_filtered <- filter_taxa(GlobalPatterns, function(x) sum(x) > 5, TRUE)
