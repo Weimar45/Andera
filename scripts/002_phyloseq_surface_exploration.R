@@ -1,4 +1,4 @@
-# Carga de la librería .
+# Carga de la librería.
 library(phyloseq)
 
 # Mirar los objetos phyloseq que vienen de fábrica con el paquete.

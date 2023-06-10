@@ -1,3 +1,4 @@
+# Carga de la librería.
 library(pacman)
 
 p_load(phyloseq, vegan)

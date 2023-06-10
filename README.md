@@ -79,3 +79,14 @@ Espero que este recurso sea útil para los investigadores y científicos de dato
 - **[PERFect](https://bioconductor.org/packages/release/bioc/html/PERFect.html)**: Este paquete proporciona métodos de filtración de permutaciones para datos de microbiomas.
 
 - **[sparseDOSSA](https://bioconductor.org/packages/release/bioc/html/sparseDOSSA.html)**: Este paquete permite la simulación de abundancias sintéticas para datos escasos (*sparse*).
+
+
+## Bases de Datos 
+
+### [NASA GeneLab: Ciencia Abierta para la Vida en el Espacio](https://genelab.nasa.gov/)
+
+**NASA GeneLab** es la primera base de datos ómicos completa relacionada con el espacio. Es un recurso interactivo y de acceso abierto donde los científicos pueden cargar, descargar, almacenar, buscar, compartir, transferir y analizar datos ómicos de experimentos de vuelo espacial y experimentos analógicos correspondientes.
+
+GeneLab se centra en entender cómo los bloques de construcción fundamentales de la vida misma (ADN, ARN, proteínas y metabolitos) cambian debido a la exposición a la microgravedad, la radiación y otros aspectos del ambiente espacial. Proporciona datos completamente coordinados de epigenómica, genómica, transcriptómica, proteómica y metabolómica, junto con metadatos esenciales que describen cada experimento de vuelo espacial y relevante para el espacio.
+
+El laboratorio juega un papel crítico en nuestra comprensión de cómo el vuelo espacial afecta a los humanos y a otros organismos modelo, como Drosophila y mamíferos. Los datos recopilados de estos modelos permiten capturar una imagen completa de los cambios moleculares asociados con el espacio.Además, la investigación espacial biológica también tiene un impacto en la salud y el bienestar de los humanos en la Tierra. Varias enfermedades que existen en la Tierra, como la osteoporosis, las enfermedades cardíacas, la pérdida de agudeza visual y la aparición de microbios virulentos, parecen acelerarse en el espacio. El estudio de los fundamentos moleculares de la progresión de las enfermedades durante el vuelo espacial puede proporcionar una visión de la aparición de enfermedades similares en la Tierra y avanzar en nuestra comprensión y, posteriormente, en nuestra capacidad para detectar y tratar con éxito tales enfermedades.
