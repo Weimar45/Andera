@@ -1,0 +1,27 @@
+---
+title: "**Archivo de Consultas de Filtrado sobre Análisis Metagenómicos**"
+author: "**Alejandro Navas González**"
+date: today
+format: 
+  html:
+    code-fold: False
+    code-tools: true
+    highlight-style: breezedark
+    theme: spacelab
+editor: visual
+warning: false
+---
+
+**1.  ¿Qué significa el filtrado por abundancia total de las OTUs?**
+
+La abundancia total de una OTU (Unidad Taxonómica Operativa) en todas las muestras se refiere a la suma de las cuentas (o lecturas) de esa OTU en todas las muestras. Por ejemplo, si se dispone de tres muestras y una OTU tiene 2 cuentas en la primera muestra, 1 cuenta en la segunda muestra y 2 cuentas en la tercera muestra, la abundancia total de esa OTU en todas las muestras sería 2 + 1 + 2 = 5. Esto es diferente del umbral de presencia en un número de muestras determinado. Es decir, una OTUs puede tener una abundancia total de 10 y estar solamente presente en una muestra.En este contexto del análisis de microbiomas, una OTU con una abundancia total baja podría ser una especie rara en la comunidad, o podría ser un artefacto de secuenciación.
+
+**2. ¿Cuáles son los métodos de filtrado más comunes y en qué radica su importancia?**
+
+- Filtrado por abundancia: Este tipo de filtrado implica eliminar las OTUs que tienen una abundancia total (es decir, la suma de las cuentas en todas las muestras) por debajo de un cierto umbral. Este tipo de filtrado puede ser relevante para eliminar las OTUs raras o los posibles artefactos de secuenciación, que podrían añadir ruido a los análisis.
+
+- Filtrado por presencia en muestras: Este tipo de filtrado implica eliminar las OTUs que están presentes en menos de un cierto número de muestras. Este tipo de filtrado puede ser relevante para eliminar las OTUs que son raras o que podrían ser artefactos de secuenciación.
+
+- Filtrado por taxonomía: Este tipo de filtrado implica eliminar las OTUs que pertenecen a ciertos grupos taxonómicos. Este tipo de filtrado puede ser relevante, por ejemplo, para eliminar las OTUs de la clase de los cloroplastos o la familia de las mitocondrias, que son organismos que no son bacterias y que pueden estar presentes en los datos debido a la contaminación durante el proceso de secuenciación. También puede ser relevante para eliminar una especie testigo que se haya añadido al experimento para controlar la calidad del proceso de secuenciación.
+
+- Filtrado por variabilidad: Este tipo de filtrado implica eliminar las OTUs que tienen una variabilidad baja o alta en su abundancia entre las muestras. Este tipo de filtrado puede ser relevante para eliminar las OTUs que son constantes o muy variables entre las muestras, ya que podrían no ser informativas para los análisis posteriores.
