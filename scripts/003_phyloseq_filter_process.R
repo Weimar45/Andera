@@ -32,7 +32,7 @@ data("GlobalPatterns")
 # afectan a tus resultados.
 
 # En este caso tenemos 26 muestras, como vimos en el script anterior, por lo que
-# podríamos establecer unas 5 muestras como umbral.
+# podríamos establecer una abundancia total de 5 como umbral para las OTUs.
 gp_filtered <- filter_taxa(GlobalPatterns, function(x) sum(x) >= 5, TRUE)
 
 # Otra vía para hacer esto sería utilizar la función prune_taxa
@@ -45,9 +45,17 @@ prune_taxa(taxa_sums(GlobalPatterns) >= 5, GlobalPatterns)
 # se utiliza para subconjuntar o "podar" un objeto phyloseq a un conjunto específico
 # de taxones (OTUs), y es útil cuando sólo se está interesado en un subconjunto 
 # específico de taxones y se quiere eliminar el resto del objeto phyloseq.
+# Por ejemplo, podemos eliminar aquellas OTUs que están presentes en al menos 3 muestras
+# sobre el objeto phyloseq ya filtrado previamente por la abundancia total de la siguiente forma: 
+gp_filtered <- prune_taxa(rowSums(otu_table(gp_filtered) > 0) >= 3, gp_filtered)
 
-# Por ejemplo, podemos eliminar aquellas OTUs que están presentes en menos de 5 muestras
-# tal como se ha hecho con filter_taxa con prune_taxa de la siguiente forma. 
-prune_taxa(rowSums(otu_table(GlobalPatterns) > 0) >= 5, GlobalPatterns)
+# Filtrado por taxonomía: Si se está interesado en un grupo taxonómico específico, 
+# se podría usar tabién prune_taxa() junto con subset_taxa(). Por ejemplo, 
+# se subconjuntaría el objeto GlobalPatterns a sólo las OTUs del filo Firmicutes así: 
+prune_taxa(taxa_names(subset_taxa(GlobalPatterns, Phylum == "Firmicutes")), GlobalPatterns)
 
-
+# Esto también se puede hacer para eliminar la especie que se haya usado de testigo 
+# en el experimento y para eliminar las OTUs de cloroplastos y mitocondrias, que 
+# pueden ser devueltas por contaminaciones en los procesos de secuenciación. 
+gp_filtered <- subset_taxa(gp_filtered, !(Class %in% "c:Chloroplast"))
+gp_filtered <- subset_taxa(gp_filtered, !(Family %in% "f:Mitochondria"))
