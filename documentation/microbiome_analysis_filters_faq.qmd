@@ -3,11 +3,11 @@ title: "**Archivo de Consultas de Filtrado sobre Análisis Metagenómicos**"
 author: "**Alejandro Navas González**"
 date: today
 format: 
-  html:
+  pdf:
     code-fold: False
     code-tools: true
     highlight-style: breezedark
-    theme: spacelab
+    -- theme: spacelab
 editor: visual
 warning: false
 ---
