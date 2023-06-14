@@ -1,0 +1,75 @@
+---
+title: "**Lesson 1: Loading Data in R**"
+author: "**Alejandro Navas González**"
+date: today
+format: 
+  html:
+    code-fold: False
+    code-tools: true
+    highlight-style: breezedark
+    theme: spacelab
+editor: visual
+warning: false
+---
+
+```{r load_libraries}
+
+library(tidyverse)
+library(openxlsx)
+
+```
+
+# **Import Data**
+
+In order to import and view a text file we can use the function `read.table()`.
+
+```{r import_table}
+
+df <- read.table('data/biology_height_dataset.txt',
+                 header = TRUE,
+                 sep = '\t')
+
+df %>% DT::datatable()
+
+```
+
+# **Import & View a Excel File**
+
+To load a xlsx file we can use the function `read.xlsx()`. 
+
+```{r import_excel}
+
+df <- read.xlsx('data/Biology_Height_dataset.xlsx')
+
+df %>% DT::datatable()
+
+```
+
+## **Import & View a csv File**
+
+We use `read_csv()` to read a csv file. 
+
+```{r import_csv}
+
+df <- read.csv('data/Biology_Height_dataset.csv',  
+               header = TRUE, 
+               sep = ';')
+
+df %>% DT::datatable()
+
+```
+
+# **Practice: How to Write a function in R**
+
+Finally, we write and execute a function called `seq_length()` to calculate the length of a given sequence.
+
+```{r seq_length}
+
+seq_length <- function (seq) {
+  length <- nchar(seq)
+  print(length)
+}
+
+seq_length("ATCTGGCAATGC")
+
+```

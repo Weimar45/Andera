@@ -1,0 +1,119 @@
+---
+title: "**Lesson 3: Reading DNA Sequences in R**"
+author: "**Alejandro Navas González**"
+date: today
+format: 
+  html:
+    code-fold: False
+    code-tools: true
+    highlight-style: breezedark
+    theme: spacelab
+editor: visual
+warning: false
+---
+
+```{r load_libraries}
+
+library(tidyverse)
+library(openxlsx)
+library(Biostrings) 
+library(DECIPHER)
+
+```
+
+# **Load DNA Sequence**
+
+First, we create the DNA sequence using `DNAString()`
+
+```{r load_seq}
+
+seq <- DNAString("AGTGTCCCTG") 
+print(seq) 
+
+```
+
+# **Length of the Sequence**
+
+We can take a look at the length of the sequence using `length()`.
+
+```{r seq_length}
+
+len <- length(seq) 
+print(len) 
+
+```
+
+# **GC Content of the Sequence**
+
+To study the content in a particular base (or bases), such as the GC content, we could use `letterFrequency()`.
+
+```{r seq_gc_content}
+
+cC <- letterFrequency(seq, "C", as.prob = TRUE) 
+cG <- letterFrequency(seq, "G", as.prob = TRUE) 
+cA <- letterFrequency(seq, "A", as.prob = TRUE) 
+cT <- letterFrequency(seq, "T", as.prob = TRUE) 
+cGC <- letterFrequency(seq, "GC", as.prob = TRUE)
+
+print(cGC)
+
+```
+
+# **Work with Fasta**
+
+## **Read the Fasta File**
+
+To read a sequence given in a FASTA file, we just need to write `readDNAStringSet()`.
+
+```{r read_fa}
+
+fastaFile <- readDNAStringSet("data/seq1.fa")
+fastaFile
+
+```
+
+
+## **Extract the Names of the Sequences**
+
+The name of the sequences contained in the FASTA file could be extracted using `names()`. 
+
+```{r names_fa}
+
+seq_name <- names(fastaFile)
+print(seq_name)
+
+```
+
+## **Extract the Sequences**
+
+```{r }
+
+sequence <- paste(fastaFile)
+print(sequence)
+
+```
+
+## **Compute the Length of the Sequence**
+
+To examine the length of the sequences, there is the function `width()`. 
+
+```{r}
+
+length_fa <- width(fastaFile)
+print(length_fa)
+
+```
+
+## **Count Nucleotide in the Sequence**
+
+Finally, to see the nucleotide content for a given sequence, we can combine `table()` and `strsplit()` functions. 
+
+```{r}
+
+count <- table(strsplit(sequence, "")[[1]])
+print(count)
+
+```
+
+
+
