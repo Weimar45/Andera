@@ -124,3 +124,6 @@ otu_table(physeq_filtered) <- otu_table(physeq_filtered) *
 
 # Número de OTUs después del filtrado
 ntaxa_after <- ntaxa(physeq_filtered)
+
+# Guardar el objeto phyloseq filtrado
+saveRDS(physeq_filtered, 'data/phyloseq_objects/GlobalPatterns_filtered.RDS')
