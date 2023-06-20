@@ -1,0 +1,30 @@
+---
+title: "**Rarefacción en Análisis de Microbiomas**"
+author: "**Alejandro Navas González**"
+date: today
+thanks: "Andera Projekt"
+format: 
+  pdf:
+    documentclass: report
+    classoption: [twocolumn]
+    highlight-style: breezedark
+editor: source
+warning: false
+bibliography: bibliography/resources.bib
+link-citations: True
+link-bibliography: True
+---
+
+# **Rarefacción en Microbiomas**
+
+## **¿Qué es la Rarefacción?**
+
+La **rarefacción** es una técnica utilizada en ecología y microbiología para normalizar los datos de conteo de especies en diferentes muestras. La idea es subsamplear aleatoriamente los datos de cada muestra hasta un tamaño de muestra específico, de modo que todas las muestras tengan el mismo número total de conteos. Esto permite comparar las muestras de manera justa, ya que elimina el efecto del tamaño de la muestra en las medidas de diversidad y abundancia.
+
+En el contexto del análisis de microbiomas, la rarefacción se utiliza a menudo para normalizar los datos de secuenciación de alto rendimiento, donde el número de lecturas de secuenciación puede variar ampliamente entre las muestras. Al subsamplear los datos hasta un tamaño de muestra específico, la rarefacción permite comparar la diversidad y la abundancia de los microbiomas en diferentes muestras de manera justa.
+
+## **¿Está la rarefacción aceptada?**
+
+Sin embargo, hay un debate en la comunidad científica sobre si la rarefacción es la mejor manera de normalizar los datos de microbioma. Algunos argumentan que la rarefacción puede ser problemática porque implica descartar datos, lo que puede reducir la potencia estadística y sesgar las estimaciones de diversidad y abundancia. Además, la rarefacción asume que todas las lecturas de secuenciación son igualmente precisas y que la abundancia de lecturas es una medida precisa de la abundancia de organismos, lo que puede no ser cierto en todos los casos.
+
+En lugar de la rarefacción, algunos investigadores prefieren utilizar métodos de normalización que no implican descartar datos, como la normalización por el tamaño total de la muestra o la transformación logarítmica. Estos métodos pueden ser más robustos y precisos que la rarefacción, especialmente cuando los datos son ruidosos o las abundancias de las especies son muy desiguales.
