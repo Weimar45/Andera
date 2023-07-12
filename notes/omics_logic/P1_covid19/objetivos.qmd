@@ -1,0 +1,48 @@
+---
+title: "**Proyecto Sars-Cov2**"
+author: "**Alejandro Navas González**"
+date: today
+thanks: "Andera Projekt"
+format: 
+  pdf:
+    documentclass: report
+    classoption: [twocolumn]
+    highlight-style: breezedark
+editor: source
+warning: false
+---
+
+# **Objetivos del Proyecto**
+
+## Objetivo 1: Genómica del SARS-COV2
+
+- Data availability, collection and sharing
+- Types of data and how is it generated/produced
+- Resources: NGS (Next Generation Sequencing) of Viral samples
+
+## Objetivo 2: Zoonotic Origin and Analysis of Genomic Variation
+
+- Phylogenetic trees - evolutionary analysis
+- Nucleotide Sequence similarity and variability
+- Mutation and Recombination
+
+## Objetivo 3: Comparison with existing Coronavirus strains
+
+- Phylogenetic trees - evolutionary analysis
+- Nucleotide Sequence similarity and variability
+
+## Objetivo 4: SARS-COV2 Pathogenesis
+
+- Covid-19 Pathogenesis: Cell entry and replication
+- SARS-COV-2 Genome structure: genes, structural proteins and polyproteins
+- Spike protein and its functional domains
+- Genomic variation and protein function
+
+## Objetivo 5: Elucidation of Transcriptomics signature for Ruxolitinib Drug
+
+- Overview of Ruxolitinib Drug
+- Transcriptomics Dataset
+- Exploratory Data Analysis: Principal Component analysis (PCA)
+- Differential Gene Expression analysis
+- Unsupervised Machine learning methods: PCA and H-clust
+- Biological Interpretation of signatures
