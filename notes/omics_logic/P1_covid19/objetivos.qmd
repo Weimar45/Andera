@@ -14,35 +14,36 @@ warning: false
 
 # **Objetivos del Proyecto**
 
-## Objetivo 1: Genómica del SARS-COV2
+**Genómica del Sars-Cov2**
 
-- Data availability, collection and sharing
-- Types of data and how is it generated/produced
-- Resources: NGS (Next Generation Sequencing) of Viral samples
+- Disponibilidad, recolección y compartición de datos
+- Tipos de datos y cómo se generan/producen
+- Recursos: Secuenciación de próxima generación (Next Generation Sequencing, NGS) de muestras virales
 
-## Objetivo 2: Zoonotic Origin and Analysis of Genomic Variation
+**Origen Zoonótico & Análisis de la Variación Genómica**
 
-- Phylogenetic trees - evolutionary analysis
-- Nucleotide Sequence similarity and variability
-- Mutation and Recombination
+- Árboles filogenéticos - análisis evolutivo
+- Similitud y variabilidad de secuencias nucleotídicas
+- Mutación y recombinación
 
-## Objetivo 3: Comparison with existing Coronavirus strains
+**Comparación con cepas existentes de Coronavirus**
 
-- Phylogenetic trees - evolutionary analysis
-- Nucleotide Sequence similarity and variability
+- Árboles filogenéticos - análisis evolutivo
+- Similitud y variabilidad de secuencias nucleotídicas
 
-## Objetivo 4: SARS-COV2 Pathogenesis
+**Patogénesis del Sars-Cov2**
 
-- Covid-19 Pathogenesis: Cell entry and replication
-- SARS-COV-2 Genome structure: genes, structural proteins and polyproteins
-- Spike protein and its functional domains
-- Genomic variation and protein function
+- Patogénesis de la COVID-19: entrada y replicación celular
+- Estructura genómica del SARS-COV-2: genes, proteínas estructurales y poliproteínas
+- Proteína *Spike* y sus dominios funcionales
+- Variación genómica y función de proteínas
 
-## Objetivo 5: Elucidation of Transcriptomics signature for Ruxolitinib Drug
+**Elucidación de la firma transcriptómica para el medicamento Ruxolitinib**
 
-- Overview of Ruxolitinib Drug
-- Transcriptomics Dataset
-- Exploratory Data Analysis: Principal Component analysis (PCA)
-- Differential Gene Expression analysis
-- Unsupervised Machine learning methods: PCA and H-clust
-- Biological Interpretation of signatures
+- Resumen del medicamento Ruxolitinib
+- Conjunto de datos transcriptómicos
+- Análisis exploratorio de datos: análisis de componentes principales (PCA)
+- Análisis de expresión génica diferencial
+- Métodos de aprendizaje automático no supervisados: PCA y agrupamiento jerárquico (H-clust)
+- Interpretación biológica de las firmas
+
