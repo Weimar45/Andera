@@ -1,5 +1,5 @@
 ---
-title: "**Proyecto Sars-Cov2**"
+title: "**Proyecto SARS-CoV-2**"
 author: "**Alejandro Navas González**"
 date: today
 thanks: "Andera Projekt"
@@ -14,7 +14,7 @@ warning: false
 
 # **Objetivos del Proyecto**
 
-**Genómica del Sars-Cov2**
+**Genómica del SARS-CoV-2**
 
 - Disponibilidad, recolección y compartición de datos
 - Tipos de datos y cómo se generan/producen
@@ -31,7 +31,7 @@ warning: false
 - Árboles filogenéticos - análisis evolutivo
 - Similitud y variabilidad de secuencias nucleotídicas
 
-**Patogénesis del Sars-Cov2**
+**Patogénesis del SARS-CoV-2**
 
 - Patogénesis de la COVID-19: entrada y replicación celular
 - Estructura genómica del SARS-COV-2: genes, proteínas estructurales y poliproteínas

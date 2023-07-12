@@ -1,0 +1,37 @@
+---
+title: "**Proyecto SARS-CoV-2: Herramientas**"
+author: "**Alejandro Navas González**"
+date: today
+thanks: "Andera Projekt"
+format: 
+  pdf:
+    documentclass: report
+    classoption: [twocolumn]
+    highlight-style: breezedark
+editor: source
+warning: false
+---
+
+# **Recursos & Herramientas para el Análisis Genómico del SARS-CoV-2**
+
+## **NCBI Virus**
+
+La plataforma **NCBI Virus** es un importante repositorio que proporciona datos de secuencia del virus SARS-CoV-2 y de otras cepas de coronavirus. Los usuarios pueden acceder a secuencias completas o parciales de nucleótidos y proteínas. Además, es posible aplicar filtros según el hospedador, la fuente, la región geográfica, la completud de la secuencia, entre otros.
+
+A continuación se tiene el enlace para [descargar los datos genómicos del SARS-CoV-2](https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&VirusLineage_ss=SARS-CoV-2,%20taxid:2697049)
+
+## **Herramientas destacadas para Visualización & Análisis**
+
+A continuación, se presentan algunas herramientas esenciales para visualizar y analizar datos genómicos del SARS-CoV-2:
+
+1. **FigTree: Árbol filogenético**
+
+   [**FigTree**](http://tree.bio.ed.ac.uk/software/figtree/) es una herramienta diseñada para visualizar y generar figuras listas para su publicación a partir de árboles filogenéticos.
+
+2. **UGENE: Alineamiento de múltiples secuencias**
+
+   **UGENE** ([**Unipro UGENE**](http://ugene.net)) es un software de código abierto y multiplataforma que permite gestionar, analizar y visualizar datos genómicos. Incluye herramientas ampliamente utilizadas en bioinformática y proporciona módulos de visualización para secuencias genómicas anotadas, ensamblajes de secuenciación de próxima generación (Next Generation Sequencing, NGS), alineamientos de múltiples secuencias, árboles filogenéticos y estructuras 3D.
+
+3. **ChimeraX: Visualización de estructuras**
+
+   **ChimeraX** ([**UCSF ChimeraX**](https://www.cgl.ucsf.edu/chimerax/)) es un programa de visualización molecular de próxima generación desarrollado por el **Resource for Biocomputing, Visualization, and Informatics** (**RBVI**). Es utilizado para visualizar estructuras moleculares y realizar análisis estructurales.
