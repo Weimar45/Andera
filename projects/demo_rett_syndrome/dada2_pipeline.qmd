@@ -1,0 +1,85 @@
+---
+title: "**DADA2 Bioinformatics Workflow**"
+subtitle: "**Demo Amplicón 16S/18S - Syndrome de Rett**"
+author: "**Alejandro Navas González**"
+date: today
+thanks: "Andera Projekt & Elia Brodskys"
+format: 
+  pdf:
+    documentclass: report
+    classoption: [twocolumn]
+    highlight-style: breezedark
+editor: visual
+warning: false
+bibliography: bibliography/resources.bib
+link-citations: True
+link-bibliography: True
+---
+
+# **Introducción: Inicio del Flujo de Trabajo**
+
+DADA2 es un paquete de software que modela y corrige errores en secuencias de amplicones secuenciadas con Illumina. DADA2 infiere secuencias de muestras de manera exacta, sin agruparlas en unidades taxonómicas operativas (OTUs), y resuelve diferencias de tan solo un nucleótido. En varias comunidades simuladas, DADA2 identificó más variantes reales y produjo menos secuencias espurias que otros métodos.
+Esta sección proporciona una secuencia completa de métodos para analizar datos de 16S y obtener salidas visuales que ayuden en la interpretación...
+
+DADA2:
+
+DADA, el Algoritmo de Denoising de Amplicones Divisivos, se introdujo para corregir errores en amplicones secuenciados con pyrosecuenciación sin construir OTUs [7]. Se demostró que DADA identifica variaciones reales a las escalas más finas en datos de amplicones secuenciados con 454 y produce pocos falsos positivos. Si no conoce el idioma de salida, pida que se especifique (sin comentarios adicionales).
+
+
+# Trimm
+
+El algoritmo Trimmomatic limpia secuencias técnicas (de una base de datos que almacena secuencias conocidas por ser utilizadas como adaptadores en experimentos de NGS) de datos de secuenciación crudos.
+
+Para obtener más información, consulte: https://www.ncbi.nlm.nih.gov/pubmed/24695404
+
+Bolger AM, Lohse M, Usadel B. Trimmomatic: un recortador flexible para datos de secuencias Illumina. Bioinformatics. 2014;30(15):2114-2120. doi:10.1093/bioinformatics/btu170. Si no conoce el idioma de salida, pida que se especifique (sin comentarios adicionales).
+
+# Filtrado QC
+
+El primer paso es filtrar las lecturas. El filtrado de control de calidad examina la calidad de las lecturas en cada nucleótido para determinar un punto de corte para las lecturas a considerar.
+
+El filtrado de archivos fastq es una función que recorta secuencias a una longitud especificada, elimina secuencias más cortas que esa longitud y filtra en función del número de bases ambiguas, una puntuación mínima de calidad y los errores esperados en una lectura. Esto se puede hacer por separado para las lecturas hacia adelante y hacia atrás o conjuntamente para ambas lecturas. Patel RK, Jain M (2012) NGS QC Toolkit: un conjunto de herramientas para el control de calidad de datos de secuenciación de próxima generación. PLOS ONE 7(2): e30619. https://doi.org/10.1371/journal.pone.0030619. Si no conoce el idioma de salida, pida que se especifique (sin comentarios adicionales).
+
+
+# Merge (Replication COunt)
+
+Después de que las lecturas se analizan en cuanto a calidad y se recortan de la misma manera, necesitamos eliminar las lecturas que no tienen una pareja coincidente. Este método produce una lista de secuencias únicas sin repeticiones y sus abundancias, así como puntuaciones de calidad posicionales de consenso para cada secuencia única, tomando el promedio (media) de las calidades posicionales de las lecturas componentes. El algoritmo de denoising DADA2 utiliza la relación empírica entre la puntuación de calidad y las tasas de error. Cuando se fusionan las lecturas, esta relación diferirá entre las partes de solo hacia adelante, solapadas y solo hacia atrás de la lectura fusionada. Esa variación interfiere con el algoritmo de denoising y, por lo tanto, se puede lograr una mayor precisión al realizar el denoising antes de la fusión. 
+
+# Pair Merge
+
+
+La fusión se realiza al alinear las lecturas denoizadas hacia adelante con el complemento inverso de las correspondientes lecturas denoizadas hacia atrás, y luego construir las secuencias "contig" fusionadas. Por defecto, las secuencias fusionadas solo se generan si las lecturas hacia adelante y hacia atrás tienen al menos una superposición de 12 bases y son idénticas entre sí en la región de superposición. Esta función intenta fusionar cada par de lecturas denoizadas hacia adelante y hacia atrás, rechazando cualquier par que no se superponga lo suficiente o que contenga demasiadas diferencias (más de 0 por defecto) en la región de superposición. Nota: Esta función asume que los archivos fastq de las lecturas hacia adelante y hacia atrás estaban en el mismo orden.
+
+https://rdrr.io/bioc/dada2/man/mergePairs.html.
+
+
+# Cluster Consensus (OTUs)
+
+
+DADA2 Cluster Consensus construye una tabla de variantes de secuencia de amplicón (ASV), una versión de mayor resolución de la tabla de unidades taxonómicas operativas (OTU) producida por métodos tradicionales. La tabla de secuencias es una matriz con filas que corresponden (y están nombradas por) las muestras, y columnas que corresponden (y están nombradas por) las variantes de secuencia. Esta tabla contiene ASVs, y las longitudes de las secuencias fusionadas están todas dentro del rango esperado para este amplicón V4.
+
+
+# Eliminación de Quimeras
+
+El método nuclear de DADA2 corrige errores de sustitución e inserción, pero las quimeras permanecen. Afortunadamente, la precisión de las variantes de secuencia después del denoising hace que la identificación de quimeras sea más simple que cuando se trata con OTUs difusas. Las secuencias quiméricas se identifican si pueden ser reconstruidas exactamente combinando un segmento izquierdo y un segmento derecho de dos secuencias "padre" más abundantes.
+
+La frecuencia de secuencias quiméricas varía sustancialmente de un conjunto de datos a otro y depende de factores como los procedimientos experimentales y la complejidad de las muestras. Aquí, las quimeras representan aproximadamente el 21% de las variantes de secuencia fusionadas, pero cuando tenemos en cuenta las abundancias de esas variantes, vemos que representan solo aproximadamente el 4% de las lecturas de secuencia fusionadas.
+
+# Asignación de Taxones
+
+En este punto, es común, especialmente en la secuenciación de amplicones 16S/18S/ITS, asignar taxonomía a las variantes de secuencia. El paquete DADA2 proporciona una implementación nativa del método del clasificador bayesiano ingenuo con este propósito. La función de Asignación de Taxonomía toma como entrada un conjunto de secuencias a clasificar y un conjunto de entrenamiento de secuencias de referencia con taxonomía conocida, y genera asignaciones taxonómicas.
+
+El paquete DADA2 también implementa un método para realizar asignaciones a nivel de especie basado en la coincidencia exacta entre ASVs y cepas de referencia secuenciadas. Un análisis reciente sugiere que la coincidencia exacta (o 100% de identidad) es la única forma apropiada de asignar especies a fragmentos de genes 16S.
+
+# APE 
+
+El Análisis de Filogenética y Evolución (APE) es un paquete escrito en el lenguaje R para calcular y visualizar la filogenia basada en métodos de distancia utilizando un algoritmo de Neighbor-Joining (NJ). Toma matrices de distancia (distancias entre los taxa) y un árbol completamente no resuelto (A), lo que significa que todas las ramas tienen la misma longitud y provienen de un solo nodo. Se calcula una matriz Q basada en las matrices de distancia y se agrupa en un nodo el par de taxa con el valor Q más bajo (por ejemplo, en B, 4 y 3). Luego, se calculan las distancias desde los taxa agrupados (y y z). Después de eso, se calculan las distancias desde los taxa externos al nuevo nodo. Este proceso se repite hasta que el árbol esté resuelto (B).
+
+
+# Phyloseq
+
+El paquete phyloseq es una herramienta para importar, almacenar, analizar y mostrar gráficamente datos de secuenciación filogenética complejos que ya han sido agrupados en Unidades Taxonómicas Operativas (OTUs), especialmente cuando se dispone de datos de muestras asociadas, un árbol filogenético y/o asignación taxonómica de las OTUs. Este paquete aprovecha muchas de las herramientas disponibles en R para ecología y análisis filogenético (vegan, ade4, ape, picante), al mismo tiempo que utiliza sistemas gráficos avanzados y flexibles (ggplot2) para producir fácilmente gráficos de alta calidad para datos filogenéticos complejos. Phyloseq utiliza un sistema especializado de clases S4 para almacenar todos los datos relacionados de secuenciación filogenética como un único objeto a nivel de experimento, lo que facilita compartir datos y reproducir análisis. En general, phyloseq busca facilitar el uso de R para un análisis eficiente, interactivo y reproducible de datos de secuenciación filogenética de alto rendimiento agrupados en OTUs.
+
+# Visualización de Datos 
+
+Con la tarea de Visualización de Datos, puedes ver las "Visualizaciones de Genoma" integradas, que incluyen un gráfico PCA en 2D, un gráfico PCA en 3D, un gráfico de barras taxonómico (que muestra la abundancia relativa promedio de cada taxón en varios niveles taxonómicos) y también la abundancia relativa de los taxones para visualizar tus resultados y comprender la diversidad microbiana.
