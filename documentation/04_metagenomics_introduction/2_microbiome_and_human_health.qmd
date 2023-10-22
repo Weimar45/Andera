@@ -1,0 +1,24 @@
+---
+title: "**El Microbioma & La Salud Humana**"
+author: "**Alejandro Navas González**"
+date: today
+thanks: "Andera Projekt"
+format: 
+  pdf:
+    documentclass: report
+    classoption: [twocolumn]
+    highlight-style: breezedark
+editor: source
+warning: false
+bibliography: archive.bib
+link-citations: True
+link-bibliography: True
+---
+
+## Introducción 
+
+Las comunidades microbianas humanas o microbiomas existen en el cuerpo humano y dependen virtualmente de él para todas sus necesidades nutricionales y energéticas. Estos microbios muestran una diversidad genotípica extrema y constituyen algunas de las poblaciones más pequeñas, dinámicas y simbióticas conocidas. Los estudios de estos organismos, que están integralmente vinculados y sostenidos por el cuerpo humano, pueden proporcionar información útil sobre la salud humana y las enfermedades. Los tipos de macronutrientes requeridos y producidos por estas especies sin duda ayudarán a identificar objetivos moleculares clave que modulan la salud humana y la función digestiva.
+
+
+
+

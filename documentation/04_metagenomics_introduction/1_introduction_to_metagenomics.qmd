@@ -1,0 +1,89 @@
+---
+title: "**Introducción a la Metagenómica**"
+author: "**Alejandro Navas González**"
+date: today
+thanks: "Andera Projekt"
+format: 
+  pdf:
+    documentclass: report
+    classoption: [twocolumn]
+    highlight-style: breezedark
+editor: source
+warning: false
+bibliography: archive.bib
+link-citations: True
+link-bibliography: True
+---
+
+## **Introducción a la Metagenómica**
+
+La **metagenómica** es el estudio de los genomas microbianos colectivos que se encuentran en su entorno natural compartido. La metagenómica describe tanto un conjunto de técnicas de investigación como un campo de investigación [@Ursell2012].
+
+La caracterización genética de organismos demasiado pequeños para ser identificados visualmente requiere métodos computacionales para determinar cómo y dónde la expresión génica diferencial dentro de un microbioma contribuye a un ecosistema cooperativo y permisivo. Esta información proporciona un marco para estudiar la homología de secuencias, realizar la clasificación taxonómica y unir eficazmente conceptos de microbiología clásica con la genómica a nivel de organismos. Así, desarrollar un enfoque analítico de sistemas para comprender la genética de un microbioma proporciona un medio para comprender las relaciones entre diversas poblaciones microbianas que de otro modo nunca se estudiarían [@NIH2019]. 
+
+Un microbioma se define por las contribuciones colectivas de los organismos que lo componen y que generan un entorno metabólica y energéticamente favorable, un bioma. Con una caracterización genética más detallada de estas comunidades, se convierte en posible comprender los mecanismos evolutivos y describir las funciones de genes y proteínas [@NRC2007].
+
+Además de proporcionar información sobre el microentorno en el que prosperan miles de organismos, la metagenómica nos proporciona una comprensión de los roles que desempeñan los organismos individuales en la salud y el bienestar humanos. La diversidad microbiana es vasta y las funciones que realizan incluyen la síntesis de nutrientes y vitaminas, la desintoxicación de compuestos ingeridos, la ayuda en la producción de energía y la protección contra patógenos. En este contexto la importancia de la metagenómica es tal que algunos de los descubrimientos más importantes de este campo provienen del estudio de las firmas genéticas de un microbioma. Esta información puede identificar patrones de expresión génica novedosos o vías biosintéticas necesarias para mantener una comunidad ambiental. Al utilizar deliberadamente nuestra capacidad para extraer información significativa de un microbioma mediante técnicas de metagenómica, tendremos un impacto significativo en la salud global, la regulación de las vías metabólicas y las metodologías clínicas utilizadas para tratar enfermedades [@GeneticScience2014].
+
+## **Tipos de Secuenciación en la Metagenómica**
+
+La gran cantidad y diversidad de organismos disponibles para el estudio en microbiología y las condiciones sideralmente diferentes en las que viven hacen que la recopilación e interpretación de datos de secuencias metagenómicas sea algo necesario para comprender las relaciones entre y dentro de estas poblaciones. Estas herramientas para el análisis metagenómico se utilizan para extraer información contenida en diferentes secuencias genómicas de miles de organismos. Cada técnica varía en la cantidad de información que puede proporcionar, pero todas son útiles para comprender la conservación evolutiva entre organismos. Los métodos metagenómicos también son importantes para comprender las interacciones microbianas, realizar comparaciones de secuencias genómicas y realizar clasificaciones taxonómicas [@Land2015].
+
+Uno de los objetivos bien establecidos utilizados en la secuenciación es el ARN ribosómico (ARNr), que proporciona un molde de secuencia corta, conservada y fácil de leer. Los ARNr 16S y 18S son abundantes en prácticamente todos los miembros de un microbioma y contienen dominios tanto conservados como variables. Las diferencias en las secuencias de los dominios variables proporcionan estimaciones de la tasa y el alcance de la divergencia evolutiva entre los microorganismos. La homología entre las secuencias de ARNr 16S puede ser tan alta como el 99% dentro de un bioma. Como resultado, la secuenciación de dominios variables a menudo carece de la sensibilidad para identificar relaciones filogenéticas, lo que dificulta las comparaciones genéticas dentro de un microbioma.
+
+### Secuenciación de ADN/ARN Shotgun
+
+El análisis metagenómico también se puede realizar utilizando la secuenciación de shotgun de ADN o ARN. La **secuenciación de shotgun** identifica todas las secuencias de ADN o ARN presentes en poblaciones bacterianas, arqueas o virales. La información de la secuenciación de shotgun se obtiene a partir de múltiples lecturas de un solo genoma huésped, lo que reduce el sesgo de selección entre las muestras. La confianza en las lecturas correctas es alta y puede proporcionar suficiente información para inferir filogenias entre las muestras. Identificar cambios en las secuencias con la secuenciación de shotgun requiere un genoma de referencia para la comparación y la gran cantidad de datos proporcionará una imagen detallada del genoma microbiano y una comprensión de la función génica microbiana, la conservación de secuencias y la filogenia.
+
+### ARNseq
+
+ARNseq es una estrategia de secuenciación metagenómica que identifica genes transcritos utilizando el ARN mensajero como plantilla. La secuenciación mediante ARNseq no se limita a los ARNm y también puede proporcionar información sobre todos los ARN codificados en una célula. Esta información ayudará a determinar qué combinaciones de genes se expresan simultáneamente en una muestra y cómo las redes de regulación génica son permisivas para la vida microbiana [@Wang2009].
+
+Este instantánea de la transcripción activa puede describir la bioenergética de una muestra y definir redes biosintéticas clave dentro de comunidades bacterianas complejas. Así, ARNseq tiene varias ventajas sobre las tecnologías de microarrays, incluyendo un menor costo, un análisis indiscriminado de fusiones génicas, la detección de variantes de un solo nucleótido e inserciones/deleciones. La sensibilidad y especificidad de ARNseq lo hacen ideal para documentar la genética de un gran número de procariontes en nuestro entorno [@Bashiardes2016].
+
+## Análisis de datos de metagenómica de amplicones de 16S
+
+Como se ha explicado, el ARN ribosómico 16S (ARNr 16S) se puede amplificar y tras la amplificación comparar para identificar la información génica microbiana y su complejidad. Este ARNr 16S es el componente de la subunidad pequeña de proteínas 30S de un ribosoma procariota que se une a la secuencia de Shine-Dalgarno en un transcrito para facilitar el proceso de traducción. 
+
+La clasificación y el análisis de lecturas de ARNr se basan en la presencia conservada y prácticamente universal de secuencias de ARNr en los procariotas. Debido a las tasas lentas de evolución del ARNr, las secuencias se han vuelto útiles para reconstruir relaciones filogenéticas y taxonómicas de una comunidad microbiana.
+
+Se cree que las diferencias entre el ARNr 16S resultan de cambios en las regiones variables menos conservadas del ARNr. Esto tiene su base en los estudios de Carl Woese y George E. Fox, pioneros en el uso del ARNr 16S en filogenia en 1990, en los cuales utilizaron secuencias de ARNr 16S para identificar linajes evolutivos distintos entre las arqueas. En sus estudios hallaron diferencias en el tamaño y el número de copias genómicas, así como la variabilidad inherente en las secuencias de ARNr 16S [@Koonin2014]. Hacer estas comparaciones en una muestra ambiental puede proporcionar información sobre la abundancia de una bacteria y su relación con otros miembros de la comunidad.
+
+La secuencia de ARNr procariota es pequeña, de alrededor de 1500 pares de bases, y las regiones del ARNr amplificadas en ARNseq varían. Los dominios constantes dentro de las secuencias de 16S facilitan el diseño de cebadores y la amplificación. La estructura del ARNr 16S también contiene nueve regiones variables además de estos dominios conservados. Las secuencias variables V3 y V4 dentro del ARNr suelen ser el objetivo común de secuenciación. La comparación de las secuencias hipervariables puede proporcionar estimaciones de la divergencia genética y la clasificación filogenética. Por lo tanto, los amplicones de 16S son esenciales para comprender el momento y el alcance del cambio evolutivo. Al analizar el número de copias de ARNr y los tamaños de los genomas en especímenes secuenciados, es posible calcular la abundancia y la diversidad microbianas.
+
+Entonces, se comparan las secuencias de los amplicones de rRNA con longitudes de lectura variables con las secuencias de rRNA de longitud completa. Se diseñan cebadores para unirse a regiones altamente conservadas llamadas amplicones. La comparación entre los amplicones permite la clasificación taxonómica de las bacterias. El preprocesamiento asegura que las secuencias de entrada sean adecuadas para el cribado de alto rendimiento. El análisis diferencial y la normalización de las secuencias de rRNA 16S proporcionan datos de alta calidad y fácil interpretación que se pueden comparar con bases de datos preexistentes como SILVA, que contienen información de secuencias actualizada y completa [@Li2017; @HighQualityRibosomal].
+
+
+## **Análisis de NGS y rRNA**
+
+Además del rRNA 16S, el DNA y el mRNA también se pueden utilizar para estudiar las diferencias genéticas entre especímenes ambientales. La secuenciación del rRNA utilizando la amplificación de genes marcadores proporciona un método relativamente sencillo para identificar genes evolutivamente conservados.
+
+Una ventaja de utilizar secuencias de rRNA para el análisis es que el rRNA se expresa de manera ubicua y, por lo tanto, proporciona una plantilla universalmente presente y accesible. La conservación de la mayoría de las regiones de las secuencias de rRNA significa que los amplicones se pueden generar relativamente fácilmente a partir de bacterias ampliamente divergentes.[13]
+
+Los habitantes de estos microbiomas complejos serían difíciles o imposibles de estudiar sin el uso de la secuenciación de próxima generación (NGS) que se dirige a los rRNAs. La NGS es versátil y puede proporcionar una cobertura completa de todo un microbioma y acomodar múltiples muestras en una sola corrida de secuenciación. Los beneficios de utilizar la NGS en lugar de la PCR o la secuenciación capilar tradicional incluyen un tiempo de reacción reducido y una mayor cobertura. La NGS es el medio más eficiente y preciso de secuenciación de rRNA, proporcionando información sobre las diferencias en la expresión génica entre las muestras, la construcción de transcriptomas y la identificación de variantes de empalme. Plataformas de NGS como el Ion Torrent PGM generan amplicones que se purifican y se agrupan antes del análisis utilizando bases de datos de acceso público.[14]
+
+Una secuencia de NGS derivada de una muestra se puede procesar de varias maneras, todas las cuales proporcionan una "base de datos de secuencias" útil para identificar sitios de unión de cebadores y sondas. La secuenciación de NGS es importante para calcular las abundancias relativas de las poblaciones bacterianas dominantes en una muestra y proporcionar una medida semicuantitativa de otras posibles poblaciones objetivo. La comparación de la abundancia de filos bacterianos en una muestra se puede utilizar para identificar qué hábitats estaban dominados por poblaciones bacterianas específicas.
+
+
+## Clasificación taxonómica
+
+Las biomoléculas de entornos microbianos a menudo se conservan en especímenes arqueológicos. Los registros históricos del tamaño, forma y composición molecular de estas poblaciones antiguas utilizando técnicas metagenómicas brindan la oportunidad de reconstruir y documentar las relaciones evolutivas de los microbios a lo largo del tiempo. Para crear criterios nuevos, eficientes y precisos para la clasificación taxonómica se requiere una comprensión profunda de los genes, rasgos y asociaciones de los organismos. Un sistema taxonómico bien diseñado proporcionará detalles sobre la historia evolutiva y debe incluir una integración completa de nuevas teorías y métodos de otros campos que brinden información sobre el origen, la genética y la evolución de las especies.
+
+La taxonomía es la teoría y práctica de identificar y clasificar organismos de manera que refleje sus relaciones evolutivas. El campo de la taxonomía es importante porque establece un enfoque metódico y sistemático para integrar las teorías y métodos del estudio evolutivo[15] en un sistema de clasificación bien definido y universal. La secuenciación tanto de ARN como de ADN es indispensable para establecer la relación entre los organismos y ha hecho posible un sistema de clasificación centrado en las diferencias genéticas. Esta información genómica luego se puede utilizar para la identificación y agrupación precisa de la microbiota en un sistema de clasificación taxonómica aceptado.
+
+Llegar a conclusiones sobre la relación entre organismos utilizando similitudes de secuencia requiere la inspección de alineamientos de secuencias, la identificación de genes marcadores y la asignación de criterios funcionales a lecturas metagenómicas. Las descripciones taxonómicas de los organismos se basan en similitudes genéticas y en el grado en que las secuencias de ADN compartidas divergen. La caracterización genética basada en homologías de secuencias determinará la probabilidad de identificar y agrupar rasgos evolutivamente conservados dentro y entre diferentes poblaciones.
+
+La taxonomía moderna ha sido revolucionada por la introducción de la secuenciación del gen del ARN ribosomal 16S.[16]. En los días previos a la llegada de la NGS en 2005, la secuenciación desempeñaba un papel secundario en los estudios de taxonomía bacteriana y arqueal debido al proceso laborioso, costoso y que requería mucho tiempo. Al acoplar la tecnología de secuenciación con los avances recientes en ciencias computacionales y bioinformática, como la computación en la nube y el análisis de grandes datos, los taxónomos están desarrollando enfoques más robustos y objetivos para la identificación y clasificación de organismos.[17] Las Unidades Taxonómicas Organizacionales (OTU) se pueden usar para clasificar y describir la extensión de la diversidad o relaciones evolutivas entre habitantes de un microbioma. Los criterios para la agrupación se basan en gran medida en características observables y fenotípicas. Los cálculos actuales de las OTUs utilizan información de secuenciación y umbrales de similitud compartida para evaluar relaciones evolutivas.
+
+La construcción y agrupación de OTUs utiliza parámetros predefinidos que comúnmente son establecidos por el investigador en una homología del 97%.[18] Las alineaciones de secuencias por encima de este umbral se consideran suficientes para distinguir entre microorganismos. El cálculo de las OTUs se puede realizar utilizando muchos algoritmos diferentes y los criterios para realizar comparaciones precisas se basan la mayoría de las veces en secuencias de rRNA 16S. Los umbrales no son definitivos y las predicciones de filogenias y relaciones ecológicas pueden ser imprecisas debido a errores en las lecturas durante la secuenciación de ADN y a los parámetros de clasificación elegidos por los investigadores.[19] Identificar y agrupar las OTUs fue posible gracias al análisis metagenómico, que se realizó por primera vez utilizando un dispositivo de pirosecuenciación de secuencias por síntesis de secuencia en 2004. Varios modelos actualizados siguieron poco después y para 2009 eran capaces de producir longitudes de lectura de 400-500 pares de bases y 400-600 Mbp por corrida.
+
+Otro hito para la industria de la secuenciación se logró con Solexa, que lanzó el Analizador de Genomas en 2006. La plataforma Illumina se optimizó en los años siguientes y ahora se ha convertido en la plataforma de secuenciación más utilizada en el mundo.[20]
+
+La secuenciación de Illumina implica la fragmentación inicial de un genoma, seguida de la adición de un adaptador a cada fragmento que luego se pasa sobre una superficie a la cual los fragmentos se unen. La secuenciación de estos fragmentos se realiza repetidamente en paralelo, con muchas lecturas producidas para cada fragmento.[21] El análisis de los datos de secuencia de fragmentos puede utilizar las plataformas de análisis Dada2 y TB
+
+io para identificar variantes verdaderas y errores de amplificación. Los algoritmos proporcionan los parámetros para calcular las OTUs y la diversidad de organismos.
+
+Para obtener las OTUs, se seleccionan secuencias de consenso que se adhieren a los criterios elegidos. Utilizando la abundancia de estos fragmentos de secuencia específicos, se cuantifican las similitudes y luego se comparan utilizando la cantidad relativa de una lectura para identificar la diversidad microbiana identificada. Las comparaciones genéticas precisas entre especímenes significan identificar la conservación de secuencias tanto dentro como entre muestras microbianas. Estas diferencias se definen en términos de diversidad alfa, la abundancia de cada especie dentro de una muestra, y diversidad beta, que representa la distribución de especies entre dos ubicaciones o sitios de muestra.
+
+
+## Bibliografía
