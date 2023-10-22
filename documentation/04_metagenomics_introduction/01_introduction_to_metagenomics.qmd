@@ -10,10 +10,20 @@ format:
     highlight-style: breezedark
 editor: source
 warning: false
-bibliography: bibliography/resources.bib
+bibliography: archive.bib
 link-citations: True
 link-bibliography: True
 ---
 
-# **Introducción a la Metagenómica**
+## **Introducción a la Metagenómica**
+
+La **metagenómica** es el estudio de los genomas microbianos colectivos que se encuentran en su entorno natural compartido. La metagenómica describe tanto un conjunto de técnicas de investigación como un campo de investigación.
+
+La caracterización genética de organismos demasiado pequeños para ser identificados visualmente requiere métodos computacionales para determinar cómo y dónde la expresión génica diferencial dentro de un microbioma contribuye a un ecosistema cooperativo y permisivo. Esta información proporciona un marco para estudiar la homología de secuencias, realizar la clasificación taxonómica y unir eficazmente conceptos de microbiología clásica con la genómica a nivel de organismos. Así, desarrollar un enfoque analítico de sistemas para comprender la genética de un microbioma proporciona un medio para comprender las relaciones entre diversas poblaciones microbianas que de otro modo nunca se estudiarían. 
+
+Un microbioma se define por las contribuciones colectivas de los organismos que lo componen y que generan un entorno metabólica y energéticamente favorable, un bioma. Con una caracterización genética más detallada de estas comunidades, se convierte en posible comprender los mecanismos evolutivos y describir las funciones de genes y proteínas.
+
+Además de proporcionar información sobre el microentorno en el que prosperan miles de organismos, la metagenómica nos proporciona una comprensión de los roles que desempeñan los organismos individuales en la salud y el bienestar humanos. La diversidad microbiana es vasta y las funciones que realizan incluyen la síntesis de nutrientes y vitaminas, la desintoxicación de compuestos ingeridos, la ayuda en la producción de energía y la protección contra patógenos. En este contexto la importancia de la metagenómica es tal que algunos de los descubrimientos más importantes de este campo provienen del estudio de las firmas genéticas de un microbioma. Esta información puede identificar patrones de expresión génica novedosos o vías biosintéticas necesarias para mantener una comunidad ambiental. Al utilizar deliberadamente nuestra capacidad para extraer información significativa de un microbioma mediante técnicas de metagenómica, tendremos un impacto significativo en la salud global, la regulación de las vías metabólicas y las metodologías clínicas utilizadas para tratar enfermedades [@Ursell2012, @NIH2019, @NRC2007, @GeneticScience2014].
+
+## **Tipos de Secuenciación en la Metagenómica**
 
