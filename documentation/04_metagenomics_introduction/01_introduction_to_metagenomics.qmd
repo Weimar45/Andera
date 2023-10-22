@@ -1,0 +1,19 @@
+---
+title: "**Introducción a la Metagenómica**"
+author: "**Alejandro Navas González**"
+date: today
+thanks: "Andera Projekt"
+format: 
+  pdf:
+    documentclass: report
+    classoption: [twocolumn]
+    highlight-style: breezedark
+editor: source
+warning: false
+bibliography: bibliography/resources.bib
+link-citations: True
+link-bibliography: True
+---
+
+# **Introducción a la Metagenómica**
+
