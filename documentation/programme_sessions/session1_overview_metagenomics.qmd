@@ -1,0 +1,2460 @@
+---
+title: "**Vista General de la Metagenómica y su Importancia**"
+author: "**Alejandro Navas González**"
+date: today
+thanks: "Andera Projekt & Elia Brodskys"
+format: 
+  pdf:
+    documentclass: report
+    classoption: [twocolumn]
+    highlight-style: breezedark
+editor: source
+warning: false
+bibliography: bibliography/resources.bib
+link-citations: True
+link-bibliography: True
+---
+
+# 
+
+Este programa se basa en sesiones que brindan una descripción general de los tipos de datos, los tipos de métodos de análisis y aplicaciones prácticas de los análisis metagenómicos. Esto es, cómo poder tomar ejemplos y practicar usando esos conjuntos de datos disponibles que pueden resultar de interés. Estos conjuntos se pueden analizar desde ideas que sean parecidas o diferentes de lo que
+
+ya se publicó y, por lo tanto, para lograr eso,
+
+esencialmente diseñamos este proceso
+
+en torno a cada uno de los temas que
+
+se ofrecen, por ejemplo, este tema
+
+es metagenómica, tenemos tres elementos
+
+en el programa, la lógica. o por qué estamos
+
+estudiando el microbioma, cuáles son los datos,
+
+ya sabes, cuáles son las
+
+preguntas interesantes, preguntas de investigación que
+
+se hacen, cuáles son las aplicaciones,
+
+qué hace la gente con los conocimientos de
+
+este tipo de datos, luego está el
+
+paso de práctica y, esencialmente, el paso de práctica.
+
+nos proporciona algunos
+
+tutoriales paso a paso, usted sabe, presione
+
+este tipo de botón y obtenga
+
+este tipo de salida, ejecute este tipo de
+
+código y obtenga este tipo de visualización,
+
+ese tipo de cosas y luego finalmente
+
+proyecte, así que comenzaremos mirando sobre los
+
+tipos de datos y las diferentes preguntas que
+
+puede hacer, luego hablaremos sobre los
+
+enfoques analíticos, qué son y
+
+por qué hacemos este tipo de cosas,
+
+cuáles son los diferentes canales que
+
+debe ejecutar para procesar y preparar
+
+los datos para el análisis o qué son las
+
+piezas reales de código que
+
+puedes ejecutar para obtener algunos tipos de
+
+visualización que, por ejemplo, se usan
+
+en publicaciones y luego, finalmente,
+
+hablaremos sobre el proyecto, entonces, ¿cómo puedes encontrar
+
+datos? ¿Cómo se ven esos datos? ¿
+
+Cómo se ven los datos de secuenciación? Cómo se
+
+ven los metadatos y cómo podemos
+
+aplicar todo lo que hemos aprendido
+
+a estos ejemplos. Por lo general, la forma en que
+
+hacemos esto es que hacemos varias de
+
+estas
+
+sesiones interactivas. Las sesiones están destinadas a ser
+
+interactivas. Eso significa. que si tienes
+
+alguna pregunta, uh, si sabes
+
+que lo que estoy diciendo no tiene sentido,
+
+puedes ponerlo en el chat, podemos detenernos
+
+y podemos abordar esas cosas y
+
+asegurarnos de que todos podamos seguir adelante, uh, cuando
+
+Tenemos sesiones de preguntas y respuestas que, como
+
+mencionó Farana, tendremos dos sesiones de preguntas y respuestas.
+
+Queremos asegurarnos de que estamos
+
+ayudando, así que si tiene alguna
+
+pregunta técnica o conceptual o
+
+incluso si está pensando en un
+
+proyecto de investigación propio. Le gustaría
+
+analizar y aplicar algunos de los
+
+métodos. Por favor, háganoslo saber con anticipación.
+
+Nos gustaría saber prepararnos para eso
+
+y poder compartir con usted algunas de
+
+las cosas que realmente lo ayudarán y
+
+luego, finalmente, le presentaremos.
+
+estudiar material, por lo que nuestra expectativa es
+
+que las personas vengan con diferentes niveles
+
+de preparación. Algunas personas vienen con una
+
+capacitación técnica y tal vez estadística mínima, por lo que no pueden comenzar de
+
+forma independiente. Algunas personas pueden
+
+estar más avanzadas que eso, por lo que tal vez usted
+
+haya hecho bioinformática para un
+
+tipo diferente de datos, tal vez hayas analizado
+
+datos en general, tal vez no sean
+
+datos biológicos o tal vez seas un
+
+microbiólogo experimentado, tal vez hayas
+
+leído esos artículos y sepas
+
+lo que se espera que suceda, simplemente no lo
+
+sabes. cómo hacerlo de forma independiente, entonces, en
+
+ese caso, le pedimos que
+
+mire el material, ya que no hay un solo tamaño que
+
+sirva para todos, pero encuentre el lugar apropiado
+
+para usted, de modo que los materiales de estudio
+
+sean el mismo grupo de materiales, pero por
+
+supuesto. eres bienvenido a elegir
+
+entre ellos y encontrar algo que se ajuste
+
+mejor a tu propósito, uh, y luego,
+
+finalmente, tenemos estas
+
+tareas prácticas, por lo que las tareas prácticas
+
+serán de dos tipos, el primer
+
+tipo serán tuberías prácticas
+
+que comenzará y haremos esto hoy
+
+con una canalización de demostración para que ni siquiera
+
+tenga que analizar ningún dato, solo necesita
+
+comprender la lógica de cada paso, cómo se
+
+realizan estos pasos. Conéctese en una serie de
+
+pasos a lo que llamamos una canalización y luego ¿
+
+Cómo se verán las salidas? ¿
+
+Cuántas de ellas? ¿De qué tipos son? En
+
+muchos casos, serán tablas
+
+y, para trabajar con tablas, normalmente
+
+queremos visualizar, tal vez los resultados
+
+tal vez los filtren, por lo que todo eso
+
+se proporcionará como un ejemplo de
+
+código que intenta ilustrar
+
+las cosas principales en las que deberías
+
+pensar cuando analizas
+
+dichos datos, así que nuevamente, como mencioné,
+
+parte de este material será
+
+muy básico y está destinado a
+
+aquellos que no tienen experiencia en
+
+metagenómica o bioinformática, por
+
+lo que si no conoces la terminología,
+
+sabes las cosas que no están
+
+claras para ti, desde las
+
+cosas más básicas, tenemos un curso llamado
+
+byes and moleculas que es una
+
+introducción a la bioinformática, ¿
+
+cómo describimos los fenómenos biológicos
+
+con datos y qué tipos de análisis se
+
+realizan a esos datos para hacer
+
+posible la interpretación? Y la pregunta que
+
+tenemos aquí en el chat es: ¿puedo obtener la
+
+sesión grabada de esto? Sí, una vez
+
+finalizada la sesión, les enviaremos a
+
+todos la grabación de la sesión por correo electrónico.
+
+En este curso, adiós y moléculas,
+
+encontrará una introducción a la
+
+metagenómica. Si no sabe
+
+en absoluto qué es la metagenómica, este es un
+
+lugar útil para comenzar. y solo para
+
+mostrarles dónde pueden encontrar
+
+esto en el portal de aprendizaje
+
+después de haber creado una cuenta, así que
+
+supongo que la mayoría de ustedes ya tienen
+
+una cuenta aquí, como se mencionó, es
+
+una cuenta gratuita, por lo que si tienen una
+
+cuenta, vaya a la
+
+pestaña de cursos y aquí mismo, en la
+
+barra de búsqueda, puede buscar
+
+metagenómica o, si no sabe
+
+dónde empezar, bytes y moléculas,
+
+debajo de adios y
+
+moléculas, aquí mismo, introducción a la
+
+metagenómica, la mayor parte del material
+
+que estamos. Lo que voy a revisar en el
+
+curso se llama metagenómica, por lo que el
+
+curso número cuatro, metagenómica, y con lo
+
+que comenzaré hoy son algunas de
+
+las pocas lecciones al comienzo de
+
+este curso, pero mi objetivo es ayudarlo a
+
+comenzar para que pueda Mira cuáles son
+
+los tipos de actividades que vamos
+
+a realizar y puedes pensar por
+
+ti mismo por dónde empezar con esos
+
+materiales para tu nivel y hasta dónde
+
+quieres llegar, así que uno de los
+
+objetivos, como Faran ya mencionó, es
+
+Eventualmente puedes aplicar algunos de estos
+
+métodos a tus propios datos o desarrollar un
+
+proyecto de investigación en torno a un
+
+conjunto de datos disponible públicamente. Hoy hablaré
+
+sobre algunos de estos conjuntos de datos, pero si
+
+deseas ir en esa dirección
+
+necesitarás varias cosas y Una
+
+de esas cosas será una
+
+cierta cantidad de puntos que, como
+
+mencionó Farana, puedes obtener al completar
+
+algunos de los cursos. Otra cosa
+
+que necesitarás es el acceso a la
+
+plataforma T bioinfo, que hoy nos
+
+aseguraremos de que tiene ese acceso y
+
+si no lo tiene para nuestra próxima sesión o
+
+tal vez para el final de esta semana, nos
+
+aseguraremos de que tenga ese acceso y,
+
+número tres, necesitará practicar
+
+y aprender a analizar los resultados o
+
+las tablas y visualizar. ellos, por lo que
+
+hoy veremos algunos ejemplos,
+
+ejemplos muy básicos, pero solo para
+
+comenzar, cómo cargar dichos datos, cómo
+
+visualizarlos y cómo
+
+interpretarlos. Bien, aquí, como mencioné, hay
+
+una introducción, hay una descripción general
+
+de diferentes tipos de datos de secuenciación uh
+
+descripción general de los métodos de análisis y luego
+
+algunos ejercicios de codificación que
+
+revisaremos hoy
+
+juntos, por lo que el curso interno
+
+le brindará una descripción general bastante detallada
+
+de cada uno de estos pasos, pero
+
+hoy vamos Saltar
+
+los detalles solo para colocar las diferentes
+
+piezas en su lugar y comenzar,
+
+por lo que esta sesión no pretende ser una
+
+revisión completa y detallada con
+
+resultados prácticos. Se supone que es una
+
+orientación y luego puede continuar
+
+con lo que sea. tipo de interés en la imagen
+
+o tal vez, si desea una
+
+vista más estructurada, verá un cronograma
+
+en la
+
+página del programa, así que para comenzar con la
+
+metagenómica, creo que lo que debemos
+
+comenzar es comprender que
+
+ya conoce la idea. Detrás de la
+
+bioinformática en muchos sentidos va a
+
+ser empezar con algo
+
+práctico que incluya algunos datos,
+
+nos proporcione una serie de pasos y
+
+nos proporcione un resultado, y ese
+
+resultado es algo que sabemos cómo
+
+interpretar en uno de los ejemplos que Lo que
+
+veremos hoy es un ejemplo de una
+
+tubería llamada tubería de datos 2, por lo que
+
+esta tubería toma datos de secuenciación y
+
+luego analiza cuáles son esas secuencias
+
+en términos de una base de datos de referencia y qué
+
+cantidad de cada uno de esos tipos de
+
+bacterias tenemos y luego visualiza
+
+nos proporciona una salida visual en la que
+
+podemos pensar, podemos intentar
+
+interpretar. A medida que avanzamos hacia todos estos
+
+métodos diferentes, debe ver que
+
+hay muchas alternativas diferentes a
+
+esos métodos y lo que veremos hoy
+
+es un paquete. que veremos brevemente
+
+llamado búsqueda de phos en r
+
+que será útil para diferentes tipos
+
+de técnicas de visualización que son
+
+estándar para este tipo de
+
+datos de secuenciación metagenómica que revisaremos
+
+hoy, así que hablemos de microorganismos
+
+y la comunidad microbiana.
+
+La conexión entre las enfermedades y los
+
+microorganismos se estableció en
+
+el siglo XIX y ya hacia finales del
+
+siglo XIX se desarrollaron métodos de laboratorio para
+
+cultivar microorganismos en el cultivo de laboratorio, lo que ayudó a
+
+caracterizarlos con tinción. Estos
+
+estudios proporcionaron información importante
+
+sobre la función bacteriana de forma aislada,
+
+independientemente de cómo fuera. Pronto se hizo evidente que la mayoría de los
+
+microorganismos viven en
+
+comunidades complejas. Hoy sabemos que los
+
+microorganismos o la microbiota que
+
+componen el microbioma humano no son
+
+simplemente organismos unicelulares que viven uno
+
+al lado del otro, sino que forman
+
+comunidades organizadas estructural y funcionalmente altamente reguladas,
+
+adheridas a superficies como biopelículas con
+
+intersecciones. colaboraciones entre especies, así como
+
+antagonismos que contribuyen a la
+
+estabilidad ecológica, se estima que la microbiota humana
+
+es de 10 a 13 a 10 a
+
+14 de células microbianas.
+
+Estimaciones recientes han hecho que aproximadamente
+
+una proporción de células microbianas a
+
+células humanas, aunque en En algún momento se
+
+informó que hay una cantidad mucho mayor
+
+de
+
+microorganismos. Algunas de estas cifras
+
+se
+
+actualizaron, por lo que los números
+
+en realidad se derivan del total de
+
+células bacterianas en el colon, el
+
+órgano que alberga la mayor cantidad de
+
+microbios, sin embargo, cada uno. de estos
+
+microorganismos porta importantes
+
+propiedades funcionales y genes que
+
+contienen información genómica. Estas
+
+propiedades y la información genómica de los
+
+microorganismos han sido de un
+
+interés creciente para la
+
+comunidad científica, lo que ha dado como resultado más de 100.000
+
+publicaciones, la mayoría de estos
+
+estudios se han centrado en el
+
+microbioma intestinal, pero como Verá que muchas
+
+aplicaciones diferentes de metagenómica
+
+han estado disponibles para que las
+
+interroguemos, así que aquí podemos ver una
+
+publicación reciente. Esta es una
+
+revisión. En realidad, también voy a compartir este
+
+enlace,
+
+así que si desea obtenerlo.
+
+Comenzó esta es una gran reseña
+
+publicada recientemente donde puedes
+
+ver cómo los diferentes tipos de áreas
+
+de nuestro cuerpo contienen diferentes números de
+
+microorganismos y cuáles son algunas de
+
+sus propiedades, pero también hay una
+
+tabla aquí que muestra el número de
+
+PubMed. artículos sobre diferentes tipos de
+
+enfermedades que están asociadas con el
+
+microbioma, por lo que la búsqueda fue enfermedad y
+
+microbioma y puede ver aquí muchos
+
+tipos diferentes de enfermedades cuyo
+
+microbioma ha sido ampliamente estudiado,
+
+por ejemplo, un ejemplo es el
+
+microbioma de la piel, por lo que la
+
+microbiota de la piel tiene la capacidad de formar estas
+
+comunidades altamente estables uh estas
+
+comunidades um están escondidas en
+
+áreas que son difíciles de alcanzar y
+
+por lo tanto no se eliminan ni
+
+cambian fácilmente, por lo que puedes ver aquí algunos
+
+ejemplos um de uh veremos algunos
+
+ejemplos de cómo podemos estudiar la
+
+composición del microbioma de la piel que
+
+nos permitirán determinar diferencias
+
+entre diferentes regiones de la piel
+
+o diferentes condiciones de la piel, por
+
+ejemplo, acné
+
+y piel sana. Ahora mucha de esta
+
+información o mucha de esa información. Los estudios
+
+se basan en nuestra capacidad de tener una
+
+línea de base, por lo que una vez que sabemos cuál
+
+es la línea de base, cuál es la
+
+condición saludable, por ejemplo, o el
+
+control normal, entonces podemos comenzar a comprender
+
+el impacto de diferentes tipos de
+
+condiciones, por ejemplo, tipos específicos
+
+de microorganismos que son altamente
+
+prevalente o tal vez cómo el
+
+microbioma cambia en diversidad y hacer
+
+preguntas sobre los detalles, por lo que la
+
+capacidad de establecer estas
+
+líneas de base saludables se está abordando mediante grandes
+
+colecciones de datos microbianos que
+
+se organizan en estos proyectos, proyectos a gran
+
+escala, por ejemplo. uh, el
+
+proyecto del microbioma humano o el proyecto intestinal británico,
+
+el proyecto intestinal estadounidense, uh,
+
+ahí está el proyecto del microbioma terrestre,
+
+así que todos estos diferentes tipos de
+
+proyectos que buscan recopilar suficientes
+
+datos para que podamos estudiar y
+
+comparar con estas líneas de base algunas de las
+
+tipos específicos de datos experimentales
+
+que podrían generarse, por lo que para poder
+
+analizar dichos datos necesitamos tener estas
+
+cuatro cosas diferentes, primero necesitamos
+
+saber qué representa el microbioma
+
+y una de las cosas importantes sobre
+
+el microbioma es que no No
+
+caracteriza a un solo organismo,
+
+caracteriza a una comunidad de
+
+microorganismos que tienen algún tipo de
+
+relación entre sí. La segunda
+
+cosa que debemos entender es cómo
+
+podemos generar datos digitales que
+
+representen a esta
+
+comunidad, por eso aquí tenemos que hablar un
+
+poco. un poco sobre los diferentes tipos de
+
+secuenciación metagenómica, incluida la
+
+secuenciación amplia, la secuenciación metagenómica completa,
+
+metatranscriptómica y otras, entonces, ¿cómo
+
+podemos realmente estudiar el material genómico
+
+en una muestra determinada de una microbiota, una
+
+comunidad de microbios, y comprender
+
+qué está sucediendo o cuántos
+
+microorganismos diferentes tenemos? Mira, una vez que tengamos
+
+esos datos de secuenciación, necesitamos
+
+entender qué podemos hacer con esos datos
+
+y cómo pasamos realmente de tener
+
+secuencias sin procesar de elementos genómicos individuales
+
+a algún tipo de
+
+imagen interpretable, o tal vez una
+
+comparación estadística que Sabemos qué
+
+decir, así que aquí hablaremos sobre
+
+diversidad, presencia y abundancia, y
+
+tal vez diferentes tipos de
+
+funcionalidad, con los que esencialmente
+
+algunos de estos microorganismos
+
+pueden asociarse y ese es
+
+esencialmente uno de los objetos de Ives. de
+
+este tipo de análisis es poder
+
+interpretar lo que está sucediendo y eso
+
+depende en gran medida de nuestra capacidad para
+
+anotar los diferentes elementos que
+
+podemos encontrar y aquí el factor limitante
+
+es que hay muchos más
+
+microorganismos y muchos más.
+
+variación dentro de estos microorganismos
+
+que lo que se ha anotado
+
+y, obviamente, esta anotación continúa
+
+como un esfuerzo en la caracterización de
+
+los diferentes
+
+microorganismos, está bien, así que nuevamente, si
+
+hay alguna pregunta en el camino, no
+
+dude en agregarla en el chat y
+
+será muy útil. Es útil para nosotros continuar
+
+esta
+
+discusión, así que, para la
+
+secuenciación metagenómica, está bien, gracias Ritaa, ¿
+
+dónde puedo encontrar el programa de conferencias y
+
+sesiones de preguntas y respuestas para el
+
+curso para principiantes? Entonces, no estoy seguro de cuál
+
+es el curso para principiantes, para este
+
+curso de genómica médica. tenemos una página que tiene
+
+toda esa información si estás
+
+hablando de la introducción a la
+
+bioinformática. Tal vez puedas poner tu
+
+correo electrónico en el chat y te lo enviaré
+
+también. Bueno, hoy echaremos un vistazo
+
+a uno de estos ejemplos uno de los
+
+tipos de secuenciación que se
+
+usa comúnmente para el análisis de secuenciación metómica o
+
+para la secuenciación metagenómica es la
+
+secuenciación de este gen de ARN ribosomal 16s,
+
+entonces el 16s, lo que se llama
+
+secuenciación amplian, es una técnica que se
+
+usa ampliamente para estudiar el microbioma. directamente en su
+
+entorno y se centra en el
+
+ARN ribosomal 16s que puede amplificarse con
+
+amplificación por PCR. Las secuencias del gen 16s
+
+contienen regiones hipervariables que
+
+proporcionan secuencias distintivas específicas de especies
+
+útiles para la identificación bacteriana,
+
+por lo que el gen bacteriano 16s contiene nueve
+
+regiones hipervariables V1 a v9 que van
+
+desde alrededor de 30 a 100 pares de bases de largo
+
+que están involucrados en la
+
+estructura secundaria de la subunidad ribosomal pequeña,
+
+el grado de conservación varía ampliamente
+
+entre regiones hipervariables con
+
+regiones más conservadas que se correlacionan con un
+
+nivel taxonómico superior y regiones menos conservadas
+
+con niveles más bajos, como género
+
+y especie, mientras que la secuencia completa de 16s
+
+permite la comparación de todas las
+
+regiones hipervariables con aproximadamente
+
+1500 pares de bases de largo. Puede ser
+
+prohibitivamente costoso para los estudios que
+
+buscan identificar o caracterizar
+
+diversas comunidades bacterianas. Estos
+
+estudios comúnmente utilizan la
+
+plataforma luminal que produce lecturas a velocidades
+
+de 50 y 12 000 veces. menos
+
+costosa que la secuenciación pirotécnica 454
+
+en la secuenciación de cantantes,
+
+respectivamente, aunque es más barata y permite una
+
+cobertura comunitaria más profunda. La
+
+secuenciación luminosa solo produce lecturas que tienen entre
+
+75 y 250 pares de bases de largo, hasta 300
+
+pares de bases con aluminio, es decir, y no tiene un
+
+protocolo establecido para
+
+ensamblar de manera confiable el muestras completas de genes y comunidades, se
+
+pueden ensamblar regiones hipervariables completas
+
+a partir de una sola ejecución de aluminio, lo que
+
+las convierte en objetivos ideales para la
+
+plataforma, por lo que aquí puede
+
+ver que el
+
+ARN ribosomal 16s tiene aproximadamente 1500 pares de bases de largo y
+
+luego tenemos estas regiones conservadas de V1 a v9
+
+y así que elegir algunos de ellos, uno
+
+o un par, lo convierte en un buen
+
+candidato para este tipo de
+
+estudios. Ahora, para analizar dichos datos, una vez que
+
+estén preparados, podemos hacer referencia
+
+a las diferentes bases de datos que contienen
+
+secuencias del gen ribosomal 16s, como
+
+puede ver. aquí mismo genes verdes, la
+
+base de datos y herramientas de genes de ARN ribosómico 16s
+
+o Silva, un
+
+recurso integral en línea para
+
+datos de secuenciación de ARN ribosomal alineados y verificados con calidad, por lo que
+
+esencialmente lo que podemos hacer es una vez que
+
+podamos generar secuencias de esos
+
+genes de ARN ribosómico 16s o las
+
+regiones hipervariables. de esos genes podemos buscar
+
+en esta base de datos y encontrar las mejores coincidencias
+
+para luego proporcionar una anotación de lo que
+
+realmente hemos
+
+encontrado, por lo que la clasificación taxonómica 16s
+
+se basa en la
+
+capacidad de secuenciar una
+
+región objetivo particular que está amplificada, por lo que en
+
+realidad perdemos el um real.
+
+abundancia específica de ese gen particular que
+
+está presente en la muestra uh y
+
+ahora podemos ver la composición, la
+
+abundancia proporcional y una vez que
+
+miramos esa inflación podemos usar los
+
+diferentes niveles de
+
+clasificación taxonómica para luego asignar
+
+proporciones y cuando hablamos En cuanto a los
+
+estudios de referencia, podemos observar
+
+regiones individuales del cuerpo y,
+
+por ejemplo, podemos establecer una
+
+composición que sea estable en
+
+varios
+
+individuos,
+
+así que esta es solo una de esas
+
+técnicas de secuenciación. De hecho,
+
+existen otros
+
+enfoques diferentes, por ejemplo. uh, puedes
+
+mirar los enfoques metatranscriptómicos basados ​​en ARN
+
+o existe la
+
+capacidad de secuenciar todos los uh, ya
+
+sabes, no solo los 16, sino intentar
+
+secuenciar, especialmente usando secuencias de lectura larga,
+
+uh, secuenciadores SE que se han
+
+vuelto más accesibles y baratos
+
+en los últimos tiempos, uh. De hecho, podemos
+
+secuenciar el ribosoma 16s completo o el
+
+gen de ARN, lo que podría brindarnos la
+
+capacidad de
+
+caracterizar mejor el nivel inferior
+
+de taxonomía, ya sabes, para que sea más detallado o,
+
+en algunos casos, incluso poder ensamblar
+
+el genoma completo real, lo que podría ser
+
+extremadamente interesante porque solo podemos
+
+confiar hasta cierto punto en conocer un
+
+gen individual y asumir
+
+que todo lo demás permanece igual. Ahora
+
+otro tipo de capacidad para estudiar este
+
+tipo de datos es intentar ver no solo
+
+qué genomas están presentes sino También qué
+
+genes se están transcribiendo y, por lo tanto, con la
+
+metatranscriptómica confiamos en el ARN.
+
+Aquí es importante separar los
+
+genes que produce el
+
+huésped en lugar de los
+
+microorganismos reales que están presentes y luego
+
+también está la espectrometría de masas
+
+donde Podemos ver el análisis de las
+
+proteínas y los metabolitos que se están
+
+produciendo.
+
+Está bien, y Rapael pregunta si la
+
+cobertura 30X es suficiente. Así que, de nuevo, hay
+
+muchas
+
+aplicaciones diferentes, pero sabes si tienes
+
+una pregunta específica suficiente para lo que
+
+sabes. Probablemente también pueda hablar de eso,
+
+así que, en última instancia, cuando
+
+tenemos esta idea de, ya sabes, lo que está
+
+presente y tal vez en qué
+
+proporciones, en última instancia, creo que
+
+todo el campo está tratando de moverse en esta
+
+dirección, no solo de lo que eso
+
+significa. que tenemos más de este
+
+microorganismo o menos de ese
+
+microorganismo, pero ¿qué
+
+significa realmente funcionalmente correcto? ¿Cómo podemos usar
+
+esta comprensión de la composición o
+
+qué genes se expresan para
+
+finalmente decir bien? ¿Qué significa esto? ¿
+
+Cuál es ese componente funcional de
+
+este? tipo de información y por eso
+
+creo que todo el campo se está moviendo hacia
+
+mayor detalle y eso significa
+
+combinar cada vez más tipos diferentes
+
+de datos para poder hacer estas
+
+preguntas mucho más específicas y aplicarlas
+
+a cosas como las que se describen aquí.
+
+impacto en el sistema inmunológico o
+
+tal vez interacción con el metabolismo de los medicamentos
+
+y otras preguntas como
+
+esa, está bien, entonces hagamos una pequeña descripción general
+
+de dónde podemos encontrar dichos datos y cómo se
+
+ven estos datos o para qué se pueden
+
+usar, así que nuevamente no. No es
+
+mucho tiempo porque dedicaremos un
+
+poco más de tiempo a algunas de las
+
+cosas prácticas para que puedas intentar
+
+comenzar, pero haremos una breve descripción general,
+
+una de las cosas que encontrarás
+
+muy útil, creo. intuitivo es
+
+este proyecto intestinal americano micro uh americano
+
+el proyecto intestino americano es un
+
+proyecto de ciencia ciudadana dedicado a la
+
+secuenciación metagenómica de ciudadanos del mundo
+
+que están contribuyendo con sus
+
+muestras de microbioma al estudio de la
+
+variabilidad del microbioma saludable o casi saludable, así que
+
+la idea es ¿podemos preguntarle a la gente? para recolectar
+
+sus muestras de microbioma,
+
+muestras de piel e intestino, envíelas a
+
+secuenciarlas y luego comenzaremos
+
+a recolectar esta variabilidad natural y
+
+uno de los ejemplos que encontrará
+
+en el proyecto estadounidense de microbioma intestinal
+
+que realmente intentaremos hacer en
+
+este programa. es, mire una
+
+muestra única individual, así que digamos que
+
+contribuyo con mi muestra, ¿cómo puedo ver mi
+
+muestra, por ejemplo?, puede ver
+
+aquí mi muestra es esta primera barra,
+
+en comparación con la dieta promedio similar,
+
+para que las personas que siguen una dieta similar a
+
+la mía, mismo sexo, IMC similar, edad
+
+y algún individuo, Michael Poen, en este
+
+caso, algún individuo que podemos
+
+comparar y, como puede ver, la
+
+comparación consta de diferentes colores
+
+aquí que están anotados aquí mismo y
+
+para, ya sabe, un tipo de comprensión. En el
+
+ejemplo de mi individuo, ahora podemos comenzar a
+
+observar los microbios más abundantes en
+
+diferentes niveles de taxonomía para que estos
+
+diferentes niveles de taxonomía ahora puedan
+
+darnos alguna referencia que podamos probar
+
+y ver qué se sabe sobre estos
+
+microorganismos individuales o taxones de
+
+microorganismos, eh, abajo. a continuación verá
+
+cómo diferentes sitios, entonces hmp aquí
+
+significa proyecto de microbioma humano, así
+
+que ahí es donde obtenemos el tipo de referencia
+
+de cómo se compara esto con la
+
+población, entonces, ¿cómo podemos compararlo con
+
+algunas de estas otras fuentes de
+
+información? Diferentes
+
+sitios del cuerpo, diferentes edades y poblaciones y
+
+la población intestinal estadounidense, así que este
+
+es un proyecto que creo que es fascinante.
+
+Nos proporciona una idea de lo que se
+
+podría hacer para comprender
+
+lo que está pasando, pero también, junto con
+
+esta información,
+
+se puede encontrar metadatos, entonces fueron
+
+datos de secuenciación, ¿cuáles son los
+
+microorganismos que están presentes? Este es
+
+un ejemplo de metadatos, entonces estos son
+
+metadatos del proyecto del microbioma humano.
+
+El proyecto del microbioma humano
+
+contiene muchas variables diferentes
+
+que se están recopilando de
+
+individuos y en este ejemplo.
+
+Estamos usando una comparación entre personas
+
+que hacen ejercicio rara vez y hacen ejercicio
+
+regularmente,
+
+así que aquí puede
+
+ver que podemos controlar ciertas
+
+condiciones, por ejemplo, no tienen
+
+enfermedad hepática, se les considera
+
+un subconjunto saludable de personas,
+
+rara vez o tal vez suplementar regularmente
+
+con vitamina D, pero la mayor
+
+diferencia aquí es que el ejercicio
+
+nunca es correcto en comparación con el diario, por lo que una de
+
+las preguntas que podría hacerse a partir de los
+
+datos es si controlamos todo lo que
+
+sabemos, para los diferentes factores, ¿
+
+podríamos? encuentre algunos individuos que son
+
+diferentes de una manera particular y luego,
+
+basándose en esa diferencia, verá
+
+si hay o no una diferencia
+
+en su microbioma, así que solo una
+
+pregunta exploratoria simple y
+
+hoy echaremos un vistazo a algunas de las formas en
+
+que Puedes empezar a pensar en estas
+
+preguntas usando este tipo de
+
+datos. Otro ejemplo que
+
+veremos es cómo varía el microbioma de la piel
+
+entre el acné y lo que se llama
+
+dermatitis perioral, una afección muy común
+
+que muchas personas han
+
+experimentado o podrían experimentar. Sigo
+
+experimentando, ya sabes, la
+
+dermatitis perioral es más bien una erupción cutánea y el acné
+
+es una afección más aguda y luego, por
+
+supuesto, también tenemos áreas de
+
+piel sana, por lo que una de las preguntas podría ser: ¿
+
+Sabes cómo
+
+interactúan esencialmente estos microbios? la piel
+
+misma, eh, en el acné inflamatorio, entonces, ¿
+
+cómo causan
+
+inflamación? Aquí, en esta
+
+discusión, también podemos descargar los datos
+
+y hoy veremos dónde se
+
+pueden encontrar estos datos y trataremos de comprender
+
+cuáles son algunas de las diferencias. Entonces, en
+
+este caso, la diferencia está
+
+representada en esta imagen de aquí,
+
+que es un gráfico de escala de dimensionalidad no métrica
+
+que nos permite ver
+
+diferentes muestras ubicadas en este
+
+espacio bidimensional y tal vez mostrar una
+
+agrupación específica basada en este
+
+tipo de anotación. Nos da una idea
+
+general de si estas muestras son
+
+diferentes o no y aquí tenemos
+
+tres muestras diferentes de acné en adultos, ninguna
+
+que es control saludable y dermatitis perioral,
+
+otro estudio más complicado en
+
+términos de cómo se realizó y
+
+qué se hizo exactamente para desarrollar los
+
+datos. Para preparar los datos es un
+
+estudio que se publicó en
+
+2015 que hablaba sobre los cambios
+
+neuroconductuales inducidos por la microbiota intestinal obesa
+
+en ausencia de obesidad,
+
+así que en este caso los investigadores estaban
+
+tratando de separar la obesidad en sí misma,
+
+por ejemplo. resultando en alguna
+
+predisposición genética o tal vez en algún tipo
+
+de dieta debido al impacto del
+
+microbioma real o ya conoces la
+
+composición de la microbiota, entonces, ¿podríamos
+
+realmente tomar la microbiota de ratones
+
+que fueron alimentados con una dieta alta en grasas? ¿Usar
+
+esa microbiota para uh, implantar una
+
+composición específica en un ratón sano y
+
+luego ver si eso condujo a algunos
+
+cambios neuroconductuales y si lees
+
+esta publicación encontrarás que sí,
+
+encontraron una asociación con la ansiedad
+
+y este tipo de patrones de
+
+comportamiento, pero qué podemos intentar y Lo que
+
+podemos hacer es intentar tomar estos datos y tratar de
+
+comprender las diferencias entre varios
+
+tipos diferentes de datos que están
+
+disponibles con esta publicación ahora, por
+
+supuesto, este tipo de publicaciones
+
+ilustran algunos de los enfoques que
+
+pueden volverse cada vez más complejos por
+
+naturaleza y Descubrirá que hay un
+
+gran interés en tratar de comprender
+
+la funcionalidad, las
+
+aplicaciones funcionales e incluso desarrollar tratamientos.
+
+Por ejemplo, aquí puede ver un
+
+tratamiento para la enfermedad de Alzheimer
+
+dirigido al microbioma, por lo que diferentes
+
+tipos de aplicaciones del microbioma
+
+obviamente van más allá. algunas de las
+
+preguntas de investigación básicas y tratar de
+
+incorporar las
+
+firmas microbianas en
+
+aplicaciones prácticas, incluidas
+
+aplicaciones clínicas como el tratamiento o incluso la
+
+comprensión del impacto en otros
+
+tipos de tratamientos como, por ejemplo, la
+
+inmunoterapia, hoy viviendo en la
+
+pandemia. Por supuesto, todos podríamos tener
+
+preguntas sobre cuál es la
+
+relación entre el microbioma y el
+
+coid 19
+
+uh y aquí hay un ejemplo de un estudio en el
+
+que se está estudiando la diversidad microbiana
+
+uh durante un largo coid y
+
+para la susceptibilidad, así que aquí lo harás.
+
+encuentre grupos de alto riesgo sucumbiendo a co
+
+19 um y uh como resultado de la pandemia que
+
+nos proporciona una cantidad tan enorme
+
+de datos que algunos investigadores
+
+decidieron recopilar esos datos también
+
+y encontraron algunas diferencias entre
+
+la duración de la recuperación y la velocidad de
+
+recuperación
+
+también. El microbioma también se utiliza
+
+no sólo en medicina sino también en
+
+biotecnología y agricultura, por
+
+ejemplo, fertilizantes microbianos. Los MFS
+
+constituyen una clase emergente de
+
+fertilizantes orgánicos y consisten en
+
+biomasa microbiana seca, por ejemplo producida
+
+a partir de efluentes de la industria de alimentos y bebidas, como se
+
+ha demostrado que proporcionar
+
+beneficios únicos, especialmente en
+
+condiciones difíciles, al mismo tiempo con
+
+impactos ambientales mínimos. Los
+
+estudios metagenómicos sobre aplicaciones agrícolas del
+
+microbioma se muestran prometedores y muchos
+
+ya han comenzado a utilizar este enfoque
+
+para mejorar el rendimiento y la resiliencia de los cultivos
+
+y, por lo tanto, los tipos de aplicaciones de la
+
+secuenciación metagenómica y El
+
+análisis de secuencia realmente continúa y sigue y
+
+sigue y lo que veremos es que veremos
+
+cómo estos tipos de
+
+estudios metagenómicos centrados en el microbioma en su
+
+conjunto son muy diferentes de la forma en que los
+
+microorganismos se pueden estudiar de forma
+
+aislada, pero solo para compare y
+
+contraste aquí hay algunos ejemplos de
+
+estudios de microorganismos de forma aislada, no
+
+como una comunidad donde se puede ver la
+
+adaptación viral de resistencia a los medicamentos o la
+
+asociación con un uh um
+
+fenotipo particular que podría estudiarse una vez que
+
+tenga el genoma completo del
+
+microorganismo, está bien, así que ahora hablaremos un
+
+poco sobre algunas de las
+
+cosas prácticas que podemos hacer para analizar dichos
+
+datos y, nuevamente, esta no será una
+
+descripción general muy detallada, pero debería
+
+proporcionarle una comprensión de alto nivel
+
+de algunas de las
+
+actividades prácticas que debería realizar. capaz de hacer
+
+después de completar esta capacitación y ya
+
+sabe cómo puede continuar pensando
+
+en algunas de las preguntas de investigación
+
+que cubrimos hasta ahora y
+
+probarlas en diferentes tipos de conjuntos de datos, así que
+
+lo primero que haremos
+
+es Vamos a intentar aprender
+
+a canalizar estos datos simplemente entendiendo
+
+la secuencia de pasos, cómo pasamos de los
+
+datos sin procesar a los datos de procesamiento y luego cuáles
+
+son algunos de los resultados, cuáles son algunas de
+
+las visualizaciones que podemos obtener en
+
+el finalice, para hacer
+
+eso vayamos al servidor que es el
+
+servidor. tbio doino, esta es una plataforma
+
+que tiene muchos de los métodos
+
+implementados en un entorno fácil de usar
+
+y, además,
+
+obtendrás algunos ejemplos de demostración en los que ni
+
+siquiera necesitas ejecutar ningún análisis,
+
+solo necesitas comprender. y
+
+visualice algunos de los datos, así que inicie
+
+sesión en esta plataforma um si no
+
+tiene un inicio de sesión, por ejemplo, se acaba de unir
+
+hoy, aún no se ha registrado realmente,
+
+no podrá hacer esto junto
+
+con nosotros ahora, pero Si ha creado una
+
+cuenta en Learn dentro de las 24 horas,
+
+debería recibir los detalles de su cuenta,
+
+así que para tener una idea de cuántos de
+
+ustedes ya tienen una cuenta, ¿podrían
+
+poner el número uno o sí o algo así en
+
+el chat para
+
+saber cuántos de ustedes ya tienen una cuenta? entonces, dos
+
+personas, si no tiene una
+
+cuenta pero le gustaría tener
+
+una para
+
+continuar, envíe un correo electrónico a soporte a
+
+pine.
+
+biografía, está
+
+bien, desafortunadamente aquellos de ustedes
+
+que no tienen acceso no
+
+podrán hacer esto en la práctica, pero
+
+verán que estos son ejemplos muy simples,
+
+por lo que una vez que obtengan el acceso, les resultará
+
+fácil replicarlos.
+
+Lo que haremos aquí y hemos cambiado
+
+algunas cosas a su alrededor, notarán que
+
+algunas cosas han cambiado. No hace mucho,
+
+hemos movido la
+
+sección metagenómica aquí y lo que haremos
+
+hoy es simplemente echar un vistazo a
+
+esto. El último ejemplo se llama amplion 16s 18s,
+
+así que si hace clic en este menú desplegable,
+
+abrirá esta sección
+
+aquí y se llama los datos para
+
+canalizar, por lo que encontrará aquí en
+
+el medio una sección llamada Datos 2.
+
+No vamos a entrar en muchos
+
+detalles sobre esto, lo que quiero que vean
+
+hoy es simplemente cómo ejecutar una canalización de demostración,
+
+cuáles son las entradas y salidas y qué
+
+significa, hacia dónde se dirige desde
+
+allí, así que aquí desea haga clic en iniciar
+
+uh, puede ver lo que cubrimos hoy,
+
+tipo de lo que se está secuenciando. La
+
+tubería data2 está diseñada específicamente
+
+para datos de secuenciación metagenómica y de pares
+
+para el ARN ribosómico 16s amplio, por lo que aquí
+
+se secuencian las regiones hipervariables del ARN ribosómico 16s, no el
+
+gen completo. um y luego uno de los objetivos
+
+de este proceso es eliminar el ruido de
+
+las secuencias reales, de modo que cuanto más precisas sean
+
+las secuencias que tengamos, mejor
+
+podremos hacerlas coincidir con precisión con
+
+la base de datos de referencia y luego, si
+
+tenemos una coincidencia precisa, Luego
+
+también podemos analizar las diferencias en la composición
+
+o tal vez cómo se relacionan entre
+
+sí genéticamente, así que aquí un
+
+paso importante es comprender
+
+correctamente el desafío y uno de los
+
+desafíos es con esta gran diversidad
+
+de microorganismos que estamos estudiando.
+
+estamos secuenciando, se espera
+
+que haya mucha variación y debido a
+
+esa variación es importante para nosotros
+
+diferenciar entre
+
+variaciones técnicas como el ruido y los datos que
+
+provienen como resultado de una
+
+secuenciación inexacta, tal vez porque no tenemos
+
+mucha cobertura buena o tal vez porque sabes que
+
+hay mucha diversidad, ¿cómo
+
+entendemos realmente la
+
+diversidad biológica que tenemos? Tenemos
+
+que eliminar el ruido y eliminar los
+
+errores y para hacer eso necesitamos
+
+fusionar las lecturas pendientes y luego
+
+combinarlas en lo que es. llamadas
+
+unidades taxómicas operativas que nos permiten eliminar gran
+
+parte de la variabilidad que es
+
+inconsistente, desafortunadamente también
+
+reduce muchas de las lecturas que
+
+tendremos, pero solo
+
+mantendremos lecturas que sean precisas
+
+y y podrían coincidir con
+
+algo, así que una vez que hagamos esto,
+
+revisaré rápidamente algunos de estos,
+
+algunos de estos pasos, queremos asignarlos
+
+a la referencia correcta en esta
+
+base de datos
+
+y asignarlos significa que ahora no
+
+puedo hablar solo de individuos.
+
+unidades taxonómicas operativas de otus, pero puedo
+
+agruparlas por cualquier nivel de taxonomía por el que
+
+pude anotarlas y, ya sabes,
+
+uno de los desafíos
+
+será cuanto más bajo queramos llegar en la
+
+escala de taxonomía, menos información
+
+tendremos. Podemos obtenerlo debido a
+
+estas regiones hipervariables y su
+
+variación, pero también debido a la
+
+cobertura y la precisión con la que sabemos cuál
+
+vino de allí. A partir de este momento,
+
+esencialmente tenemos varias
+
+tablas diferentes, esas tablas incluyen una tabla de
+
+abundancia de otu o cuánto. de una
+
+unidad taxonómica operativa particular que
+
+tengo proporcionalmente en cada muestra y
+
+La anotación de dónde se relaciona ese otu
+
+desde la base de datos de referencia
+
+porque tengo la base de datos de referencia.
+
+También sé la relación entre ellos. ¿
+
+Qué tan cerca están entre sí? ¿Podrían
+
+agruparse? de alguna manera, ¿qué tan lejos
+
+están evolutivamente entre sí
+
+y luego puedo realizar un
+
+análisis Downstream que incluye
+
+construir esa relación filogenética
+
+con el simio y luego visualizar los
+
+resultados con phosy, que es un paquete en
+
+r que nos permite hacer visualizaciones
+
+y todo tipo de análisis estadístico
+
+que luego podemos interpretar en términos de
+
+diferencias entre grupos de muestras o
+
+mirando
+
+muestras individuales, así que una vez que hagamos eso y hagamos clic en
+
+finalizar
+
+aquí veremos algunos de los
+
+archivos de salida, así que una vez que haga clic Bueno,
+
+aquí tendrás una carpeta llamada
+
+descargar archivos de salida de canalización.
+
+Bueno, ¿cuántos de ustedes pudieron
+
+acceder a
+
+esta última pantalla que tengo? Bueno,
+
+perfecto. Rafael, ¿alguien
+
+más lo hizo? Bueno, si no lo hicieron, uh otra vez,
+
+simplemente repetiré los pasos. muy rápido, así que
+
+desde las áreas de
+
+análisis aquí abajo amplion 16s 18s,
+
+haga clic en este menú
+
+desplegable, vaya a la demostración,
+
+inicie el filtrado de control de calidad,
+
+recuento de replicación, PIR,
+
+fusione, consenso del clúster,
+
+OU, elimine
+
+chera, asigne
+
+tonomy ape y luego
+
+FY, después de esto, haga clic en
+
+finalizar y obtendrá el descargue los
+
+archivos de salida de la canalización, abra esto y ahora
+
+tiene varias cosas diferentes y estos
+
+son los tipos de resultados que
+
+obtendrá de una canalización.
+
+Estos resultados incluirán tablas,
+
+archivos txt, por ejemplo, gráficos como estos
+
+diagramas PDF aquí mismo, archivos fasta de
+
+secuencias reales y esos son los principales tipos
+
+de datos con los que tendrás que lidiar. Bueno,
+
+como ejemplo, esto se
+
+explicará con mucho más
+
+detalle en el curso, de modo que cuando entres
+
+al curso de metagenómica y quieras
+
+entender qué ¿Fue lo que estábamos
+
+haciendo aquí? Tienes una
+
+lección práctica de análisis metagenómico de 16 que
+
+puedes revisar, comprender cada uno de los
+
+pasos y ver todos los resultados en un solo
+
+lugar, pero antes de comenzar,
+
+debes repasar todos estos
+
+diferentes. secciones para comprender qué
+
+tipos de datos de secuenciación tenemos, cuáles
+
+son las formas específicas de analizarlos
+
+y luego incluso practicar algunos de los
+
+conceptos básicos para que comprenda lo que
+
+habrá en un archivo de muestra individual
+
+y, para hacerlo, echemos un vistazo.
+
+Veamos otro ejemplo, así que vamos,
+
+esperemos que todos tengan una buena idea
+
+de lo que podemos hacer en la plataforma,
+
+qué tipo de cosas vamos a
+
+hacer y aquí vamos a hacer
+
+algo más. Voy a intentar
+
+ejecutar un fragmento de código en R y
+
+al final de esta sesión puedes descargar
+
+este código y ejecutarlo en tu sistema
+
+también, así que lo que haré es entrar en
+
+esta lección
+
+seis, está bien, este es el
+
+enlace. y simplemente repasaremos esta
+
+lección con un pequeño ejercicio al
+
+final, está bien, así que avísame una vez que
+
+estés en este enlace, nos tomaremos
+
+solo unos minutos, no será
+
+mucho tiempo, eh, está bien.
+
+Perfecto, entonces aquí tenemos un
+
+problema diferente. Teníamos varias muestras
+
+y la pregunta era cómo se comparan estos grupos
+
+de muestras entre sí. En este
+
+caso, solo tomaremos una muestra para
+
+no tener nada con qué comparar,
+
+solo queremos Entendemos lo que contiene y
+
+para hacerlo usaremos una tubería p diferente,
+
+por lo que esta es una tubería que
+
+hará algo muy diferente.
+
+Aquí tomaremos el gen de ARN ribosomal 16s completo
+
+que está secuenciado y
+
+lo alinearemos con una referencia. base de datos de todos los
+
+genes de ARN ribosomal 16s, vamos a
+
+contar cuántos tenemos de qué tipo
+
+y
+
+los vamos a anotar, bien, así que aquí la tabla básica
+
+con la que vamos a tratar
+
+se ve así.
+
+elementos individuales, elementos genómicos, por ejemplo,
+
+ARN ribosomal 16s, y puedes ver cómo
+
+el reino Fila Etc está organizado
+
+de acuerdo con las diferentes
+
+clasificaciones taxonómicas, con cuántos de cada
+
+tipo
+
+tengo y luego también podrás
+
+anotar correctamente, así que sepáralos.
+
+y mira cuántos tienes de
+
+diferentes tipos de, por ejemplo,
+
+F, así que si solo nos enfocamos en
+
+F, podemos ver cuántos de cada tipo
+
+tenemos ahora, aparecerán muchas veces,
+
+porque múltiples organismos caen
+
+bajo diferentes F, así que Necesitamos
+
+combinarlos para que después de
+
+combinarlos podamos calcular porcentajes. ¿
+
+Cuál es el porcentaje de un
+
+tipo particular del total que tenemos
+
+y obviamente podemos visualizar dichos datos?
+
+Podemos preparar algún tipo de
+
+representación visual y eso a veces es Para obtener
+
+más información, podemos hacer un gráfico circular
+
+o un gráfico de barras, de modo que esencialmente
+
+podamos ver lo que está sucediendo con nuestros
+
+datos, por lo que esta lección es para poder
+
+realizar estos sencillos pasos en R. Si
+
+ya conoce R, lo sabe. En muchas
+
+aplicaciones diferentes en R,
+
+generalmente hay una biblioteca que ya
+
+contiene muchas de las funciones que le
+
+gustaría usar, por lo que no
+
+tiene que reinventar la rueda. Algunos de estos
+
+paquetes son muy específicos, como fos seek,
+
+solo producen un número determinado. de gráficos
+
+que son útiles para una
+
+aplicación particular como, por ejemplo,
+
+análisis filogenético para phos seek, pero
+
+algunos de ellos son bibliotecas más generales
+
+y esas bibliotecas incluyen formas de
+
+visualizar datos y crear diferentes
+
+gráficos o tal vez calcular diferentes
+
+estadísticas para diferentes tipos de cosas
+
+que puede encontrar, así que aquí haremos
+
+algo muy simple, aprenderemos cómo
+
+cargar nuestros datos, prepararemos un gráfico circular y
+
+luego haremos un gráfico de barras porque el
+
+gráfico de barras podría ser más fácil de
+
+interpretar visualmente que un gráfico circular parcial, por lo que
+
+el El objetivo sería simplemente
+
+entender cuántos de cada tipo
+
+tengo en una muestra única en particular
+
+sin tener que comparar con nada, así que
+
+aquí tenemos algo de
+
+código y repasemos este código
+
+muy rápidamente, cargamos una biblioteca, esta
+
+biblioteca es para cargar una Archivo Excel ahora,
+
+a veces tendrá archivos CSV, archivos txt,
+
+archivos Excel, por lo que necesita poder
+
+cargar esos datos y cargarlos en
+
+su entorno en su secuencia de comandos. Aquí
+
+lo haremos aquí en nuestro servidor, pero
+
+también puede hacerlo en entonces queremos
+
+ordenar los datos y ordenar los
+
+datos es útil porque en lugar de
+
+mirar imágenes que se ven así,
+
+podemos organizarlas para que todas se vean
+
+así, de mayor a
+
+menor, y una vez que lo hagamos, entonces
+
+cree
+
+porcentajes, haga un gráfico circular y también
+
+haga un diagrama de barras al final, así que veamos
+
+qué tan difícil es para nosotros realizar
+
+todos estos pasos, incluido agregar algo de
+
+color aquí
+
+también, está bien, aquí tienes una
+
+consola, que es donde ejecuta el
+
+código um y en esta consola ya
+
+tiene todos los datos y todos los
+
+scripts cargados, de hecho, si desea
+
+utilizar este conjunto de datos en su computadora,
+
+es posible que desee descargarlo aquí mismo, así que
+
+simplemente haga clic derecho en esto. enlace y
+
+descargue el
+
+archivo de enlace si desea ver qué sucede
+
+cuando ejecuta este código, este código debe
+
+ejecutarse exactamente de la misma manera en su
+
+computadora que aquí, lo único
+
+que debe recordar es que estamos
+
+usando una
+
+biblioteca, sí. puedes ejecutarlo en nuestro estudio,
+
+pero en nuestro estudio necesitarás tener
+
+la única biblioteca que estamos usando,
+
+esta biblioteca adicional Excel, uh, para leer
+
+archivos de Excel, está
+
+bien, así que intentemos
+
+ejecutarlo y podrás ver que, en primer lugar,
+
+tuvo éxito, tenemos
+
+la
+
+respuesta correcta y aquí tenemos los
+
+resultados, así que este es un gráfico circular que
+
+creamos y este es un gráfico de barras que
+
+creamos y este gráfico de barras ya está
+
+anotado. Ahora intentemos cómo cambiar
+
+solo uno. pequeña cosa para que sepamos
+
+que este es el código real que se ejecuta y
+
+no solo un botón automático uh,
+
+así que una de las cosas que pueden ver
+
+aquí es que cuando creamos un gráfico circular
+
+o un gráfico de barras, en realidad llamamos a darles
+
+un El título principal es un título y aquí también
+
+creamos diferentes dimensiones para nuestras
+
+tramas, así que vamos a hacer dos cosas:
+
+vamos a aumentar las dimensiones
+
+porque esto es un poco pequeño y
+
+en realidad vamos a cambiar el título.
+
+Así que aquí vamos a cambiar esto a un
+
+gráfico circular y aquí vamos a agregar un
+
+gráfico de barras y también puedes intentar hacer esto en nuestro
+
+estudio.
+
+Bien, aquí puedes ver que
+
+también agregamos la etiqueta a nuestro
+
+eje x. y cuando miramos los xais
+
+aquí en el gráfico de barras, podemos ver el
+
+tipo de bacterias, pero en realidad el tipo
+
+es por película, así que aquí queremos
+
+agregar
+
+FM, vale, ahora una vez que hagamos esto, oh sí,
+
+también queríamos
+
+aumentar el tamaño, así que hagamos
+
+esto y ejecútelo nuevamente,
+
+bien,
+
+aquí el gráfico circular, cambiamos
+
+eso y aquí también cambiamos la película y el
+
+diagrama de barras aquí y noté, por
+
+cierto, que escribí la C en mayúscula para poder
+
+hacerlo más pequeño, así que esto es un
+
+fragmento de código real si quiero llevarlo a mi
+
+computadora, ¿qué necesito copiar
+
+aquí? es el botón copiar código,
+
+abra nuestro estudio, si alguien no tiene
+
+nuestro estudio, tenemos un pequeño tutorial sobre
+
+cómo instalar nuestro studio y luego
+
+puedes ejecutar exactamente el mismo código, obviamente
+
+necesitarías configurar tu
+
+entorno para tener la biblioteca y
+
+tener el archivo bien, así que aquí está nuestro estudio,
+
+hagámoslo más grande, crea un nuevo
+
+script, pégalo
+
+aquí, está bien, y aquí, a la derecha. tengo
+
+esta biblioteca, ya la tengo instalada, ejecútela, está
+
+bien, las etiquetas de objetos no se
+
+encuentran, así que aquí tenemos, así que
+
+creo que lo que está sucediendo, ejecútela así, está
+
+bien,
+
+ejecútela así,
+
+todo bien, y ahí
+
+lo tenemos, también funciona. en nuestro
+
+estudio está bien, entonces para resumir porque
+
+ya estamos repasando el tiempo, resumamos
+
+esto y resumamos lo que hemos hecho
+
+hoy. El objetivo de este
+
+programa es proporcionarnos métodos de
+
+análisis que sabemos cómo realizar y
+
+sabemos cómo. Hoy interpretamos que ejecutamos una
+
+canalización de demostración llamada data to
+
+Pipeline y vimos estos datos a
+
+canalización en términos de las entradas y
+
+salidas para comprender la lógica
+
+del análisis. Ahora hay muchos otros
+
+tipos de análisis que podemos hacer y
+
+analizamos. En esta anotación del
+
+ARN ribosomal 16s también tenemos la tubería k 2
+
+y tenemos esta tubería de datos 2 para que
+
+podamos ver esos diferentes ejemplos
+
+y cómo abordan el mismo problema
+
+con otros métodos diferentes. También
+
+analizamos este ejemplo simple de
+
+visualización de cómo ¿Podemos visualizar los
+
+datos que tenemos de la
+
+secuenciación y vimos que tenemos
+
+esta abundancia de
+
+proteobacterias en esta
+
+muestra en particular? Ahora, ¿qué se hace en el futuro?
+
+Así que recomiendo varias
+
+publicaciones diferentes que puede consultar para hacer
+
+algo así. comience,
+
+avance más hacia este campo de la
+
+metagenómica, hay una buena revisión del
+
+proyecto del microbioma humano que
+
+contiene una gran cantidad de datos de ARN ribosomal 16s
+
+utilizados en una variedad de estudios,
+
+también encontrará aquí un artículo. Compartiré los
+
+enlaces. en solo un momento, bioinformática
+
+para estrategias y avances conceptuales de investigación de micromas,
+
+y también exploraremos el
+
+proyecto real del microbioma humano, así
+
+que esta es una colección de
+
+datos que tiene 160, así como
+
+también metagenómica, y puedes ver
+
+diferentes tipos. de colecciones dentro de
+
+este proyecto uh
