@@ -31,11 +31,11 @@ La gran cantidad y diversidad de organismos disponibles para el estudio en micro
 
 Uno de los objetivos bien establecidos utilizados en la secuenciación es el ARN ribosómico (ARNr), que proporciona un molde de secuencia corta, conservada y fácil de leer. Los ARNr 16S y 18S son abundantes en prácticamente todos los miembros de un microbioma y contienen dominios tanto conservados como variables. Las diferencias en las secuencias de los dominios variables proporcionan estimaciones de la tasa y el alcance de la divergencia evolutiva entre los microorganismos. La homología entre las secuencias de ARNr 16S puede ser tan alta como el 99% dentro de un bioma. Como resultado, la secuenciación de dominios variables a menudo carece de la sensibilidad para identificar relaciones filogenéticas, lo que dificulta las comparaciones genéticas dentro de un microbioma.
 
-### Secuenciación de ADN/ARN Shotgun
+### **Secuenciación de ADN/ARN Shotgun**
 
 El análisis metagenómico también se puede realizar utilizando la secuenciación de shotgun de ADN o ARN. La **secuenciación de shotgun** identifica todas las secuencias de ADN o ARN presentes en poblaciones bacterianas, arqueas o virales. La información de la secuenciación de shotgun se obtiene a partir de múltiples lecturas de un solo genoma huésped, lo que reduce el sesgo de selección entre las muestras. La confianza en las lecturas correctas es alta y puede proporcionar suficiente información para inferir filogenias entre las muestras. Identificar cambios en las secuencias con la secuenciación de shotgun requiere un genoma de referencia para la comparación y la gran cantidad de datos proporcionará una imagen detallada del genoma microbiano y una comprensión de la función génica microbiana, la conservación de secuencias y la filogenia.
 
-### ARNseq
+### **Técnica ARN-seq**
 
 ARNseq es una estrategia de secuenciación metagenómica que identifica genes transcritos utilizando el ARN mensajero como plantilla. La secuenciación mediante ARNseq no se limita a los ARNm y también puede proporcionar información sobre todos los ARN codificados en una célula. Esta información ayudará a determinar qué combinaciones de genes se expresan simultáneamente en una muestra y cómo las redes de regulación génica son permisivas para la vida microbiana [@Wang2009].
 
@@ -56,16 +56,16 @@ Entonces, se comparan las secuencias de los amplicones de rRNA con longitudes de
 
 ## **Análisis de NGS y rRNA**
 
-Además del rRNA 16S, el DNA y el mRNA también se pueden utilizar para estudiar las diferencias genéticas entre especímenes ambientales. La secuenciación del rRNA utilizando la amplificación de genes marcadores proporciona un método relativamente sencillo para identificar genes evolutivamente conservados.
+Además del rRNA 16S, el DNA y el ARNm también se pueden utilizar para estudiar las diferencias genéticas entre especímenes ambientales. La secuenciación del rRNA utilizando la amplificación de genes marcadores proporciona un método relativamente sencillo para identificar genes evolutivamente conservados.
 
 Una ventaja de utilizar secuencias de rRNA para el análisis es que el rRNA se expresa de manera ubicua y, por lo tanto, proporciona una plantilla universalmente presente y accesible. La conservación de la mayoría de las regiones de las secuencias de rRNA significa que los amplicones se pueden generar relativamente fácilmente a partir de bacterias ampliamente divergentes.[13]
 
-Los habitantes de estos microbiomas complejos serían difíciles o imposibles de estudiar sin el uso de la secuenciación de próxima generación (NGS) que se dirige a los rRNAs. La NGS es versátil y puede proporcionar una cobertura completa de todo un microbioma y acomodar múltiples muestras en una sola corrida de secuenciación. Los beneficios de utilizar la NGS en lugar de la PCR o la secuenciación capilar tradicional incluyen un tiempo de reacción reducido y una mayor cobertura. La NGS es el medio más eficiente y preciso de secuenciación de rRNA, proporcionando información sobre las diferencias en la expresión génica entre las muestras, la construcción de transcriptomas y la identificación de variantes de empalme. Plataformas de NGS como el Ion Torrent PGM generan amplicones que se purifican y se agrupan antes del análisis utilizando bases de datos de acceso público.[14]
+Los habitantes de estos microbiomas complejos serían difíciles o imposibles de estudiar sin el uso de la secuenciación de próxima generación (NGS) que se dirige a los ARNr. La NGS es versátil y puede proporcionar una cobertura completa de todo un microbioma y acomodar múltiples muestras en una sola corrida de secuenciación. Los beneficios de utilizar la NGS en lugar de la PCR o la secuenciación capilar tradicional incluyen un tiempo de reacción reducido y una mayor cobertura. La NGS es el medio más eficiente y preciso de secuenciación de rRNA, proporcionando información sobre las diferencias en la expresión génica entre las muestras, la construcción de transcriptomas y la identificación de variantes de empalme. Plataformas de NGS como el Ion Torrent PGM generan amplicones que se purifican y se agrupan antes del análisis utilizando bases de datos de acceso público.[14]
 
 Una secuencia de NGS derivada de una muestra se puede procesar de varias maneras, todas las cuales proporcionan una "base de datos de secuencias" útil para identificar sitios de unión de cebadores y sondas. La secuenciación de NGS es importante para calcular las abundancias relativas de las poblaciones bacterianas dominantes en una muestra y proporcionar una medida semicuantitativa de otras posibles poblaciones objetivo. La comparación de la abundancia de filos bacterianos en una muestra se puede utilizar para identificar qué hábitats estaban dominados por poblaciones bacterianas específicas.
 
 
-## Clasificación taxonómica
+## **Clasificación taxonómica**
 
 Las biomoléculas de entornos microbianos a menudo se conservan en especímenes arqueológicos. Los registros históricos del tamaño, forma y composición molecular de estas poblaciones antiguas utilizando técnicas metagenómicas brindan la oportunidad de reconstruir y documentar las relaciones evolutivas de los microbios a lo largo del tiempo. Para crear criterios nuevos, eficientes y precisos para la clasificación taxonómica se requiere una comprensión profunda de los genes, rasgos y asociaciones de los organismos. Un sistema taxonómico bien diseñado proporcionará detalles sobre la historia evolutiva y debe incluir una integración completa de nuevas teorías y métodos de otros campos que brinden información sobre el origen, la genética y la evolución de las especies.
 
@@ -86,4 +86,4 @@ io para identificar variantes verdaderas y errores de amplificación. Los algori
 Para obtener las OTUs, se seleccionan secuencias de consenso que se adhieren a los criterios elegidos. Utilizando la abundancia de estos fragmentos de secuencia específicos, se cuantifican las similitudes y luego se comparan utilizando la cantidad relativa de una lectura para identificar la diversidad microbiana identificada. Las comparaciones genéticas precisas entre especímenes significan identificar la conservación de secuencias tanto dentro como entre muestras microbianas. Estas diferencias se definen en términos de diversidad alfa, la abundancia de cada especie dentro de una muestra, y diversidad beta, que representa la distribución de especies entre dos ubicaciones o sitios de muestra.
 
 
-## Bibliografía
+## **Bibliografía**
