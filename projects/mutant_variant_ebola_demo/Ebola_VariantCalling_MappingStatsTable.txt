@@ -1,0 +1,9 @@
+Notes	SRR5528816_1stats.txt_NumberOfReads	SRR5528816_1stats.txt_Percent	SRR5528817_1stats.txt_NumberOfReads	SRR5528817_1stats.txt_Percent	SRR5528818_1stats.txt_NumberOfReads	SRR5528818_1stats.txt_Percent	SRR5528819_1stats.txt_NumberOfReads	SRR5528819_1stats.txt_Percent	SRR5528820_1stats.txt_NumberOfReads	SRR5528820_1stats.txt_Percent	SRR5528821_1stats.txt_NumberOfReads	SRR5528821_1stats.txt_Percent	SRR5528822_1stats.txt_NumberOfReads	SRR5528822_1stats.txt_Percent	SRR5528823_1stats.txt_NumberOfReads	SRR5528823_1stats.txt_Percent	SRR5528824_1stats.txt_NumberOfReads	SRR5528824_1stats.txt_Percent	SRR5528825_1stats.txt_NumberOfReads	SRR5528825_1stats.txt_Percent
+were_paired	471656	100.00%	620972	100.00%	189778	100.00%	959675	100.00%	401875	100.00%	623654	100.00%	414955	100.00%	189282	100.00%	609268	100.00%	271496	100.00%
+aligned_concordantly_0_times	64342	13.64%	110182	17.74%	7310	3.85%	129667	13.51%	13769	3.43%	28923	4.64%	44867	10.81%	6635	3.51%	24769	4.07%	9285	3.42%
+aligned_concordantly_exactly_1_time	407293	86.35%	510778	82.25%	182443	96.13%	797600	83.11%	388089	96.57%	594727	95.36%	370079	89.19%	182631	96.49%	584436	95.92%	262190	96.57%
+aligned_concordantly_>1_times	21	0.00%	12	0.00%	25	0.01%	32408	3.38%	17	0.00%	4	0.00%	9	0.00%	16	0.01%	63	0.01%	21	0.01%
+aligned_0_times	16615	12.91%	14775	6.70%	5269	36.04%	158914	61.28%	6581	23.90%	8444	14.60%	8332	9.29%	5132	38.67%	15080	30.44%	6290	33.87%
+aligned_exactly_1_time	112069	87.09%	205589	93.30%	9348	63.94%	98869	38.12%	20952	76.08%	49398	85.40%	81402	90.71%	8137	61.32%	34447	69.54%	12277	66.11%
+aligned_>1_times	0	0.00%	0	0.00%	3	0.02%	1551	0.60%	5	0.02%	4	0.01%	0	0.00%	1	0.01%	11	0.02%	3	0.02%
+overall_alignment_rate	----	98.24%	----	98.81%	----	98.61%	----	91.72%	----	99.18%	----	99.32%	----	99.00%	----	98.64%	----	98.76%	----	98.84%
