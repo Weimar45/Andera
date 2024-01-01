@@ -83,3 +83,8 @@ El paquete phyloseq es una herramienta para importar, almacenar, analizar y most
 # Visualización de Datos 
 
 Con la tarea de Visualización de Datos, puedes ver las "Visualizaciones de Genoma" integradas, que incluyen un gráfico PCA en 2D, un gráfico PCA en 3D, un gráfico de barras taxonómico (que muestra la abundancia relativa promedio de cada taxón en varios niveles taxonómicos) y también la abundancia relativa de los taxones para visualizar tus resultados y comprender la diversidad microbiana.
+
+
+# Bibliografía
+
+Consulta el [Workflow](https://dash.t-bio.info/amplicon?id=3933351-e6ad8c0fe1fb7298)
